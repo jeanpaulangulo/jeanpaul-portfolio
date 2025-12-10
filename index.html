@@ -123,12 +123,13 @@
       color: var(--muted);
     }
 
-    /* ABOUT centrado, sin tarjeta */
+    /* ABOUT centrado, separado del resto, sin tarjeta */
     .about-section {
-      padding: 8px 4px 12px;
-      margin: 0 auto 20px;
+      padding: 16px 4px 24px;
+      margin: 10px auto 40px;
       max-width: 850px;
       text-align: center;
+      border-bottom: 1px solid rgba(0, 0, 0, 0.06);
       animation: fadeUp 0.6s ease-out forwards;
       opacity: 0;
       transform: translateY(18px);
@@ -165,13 +166,10 @@
       transform: translateY(18px);
       animation: fadeUp 0.6s ease-out forwards;
       transition:
-  transform 0.75s cubic-bezier(0.25, 0.1, 0.25, 1),
-  box-shadow 0.75s cubic-bezier(0.25, 0.1, 0.25, 1),
-  border-color 0.6s ease,
-  background 0.6s ease,
-  z-index 0.4s ease;
-
-
+        transform 0.25s ease-out,
+        box-shadow 0.25s ease-out,
+        border-color 0.25s ease-out,
+        background 0.25s ease-out;
     }
 
     .module:hover {
@@ -234,13 +232,13 @@
       transform: translateY(18px);
       animation: fadeUp 0.7s ease-out forwards;
       transition:
-        transition:
-  transform 0.75s cubic-bezier(0.25, 0.1, 0.25, 1),
-  box-shadow 0.75s cubic-bezier(0.25, 0.1, 0.25, 1),
-  border-color 0.6s ease,
-  background 0.6s ease,
-  z-index 0.4s ease;
-
+        transform 0.75s cubic-bezier(0.25, 0.1, 0.25, 1),
+        box-shadow 0.75s cubic-bezier(0.25, 0.1, 0.25, 1),
+        border-color 0.6s ease,
+        background 0.6s ease,
+        z-index 0.4s ease;
+      text-align: center;
+      transform-origin: center center;
     }
 
     /* HOVER expansivo más lento y suave */
@@ -288,12 +286,10 @@
       opacity: 0;
       overflow: hidden;
       transition:
-  transform 0.75s cubic-bezier(0.25, 0.1, 0.25, 1),
-  box-shadow 0.75s cubic-bezier(0.25, 0.1, 0.25, 1),
-  border-color 0.6s ease,
-  background 0.6s ease,
-  z-index 0.4s ease;
-;
+        max-height 0.8s ease,
+        opacity 0.6s ease,
+        margin-top 0.6s ease;
+      margin-top: 0;
     }
 
     .project-details p {
@@ -379,22 +375,21 @@
       </div>
     </header>
 
-    <!-- ABOUT centrado -->
+    <!-- ABOUT centrado, versión data-driven anterior -->
     <section class="about-section">
-      <p class="section-label">About</p>
-      <h2 class="section-title">About Me</h2>
+      <h1 class="section-title">About Me</h1>
       <p class="small">
-        I’m a project and operations lead who enjoys turning messy, high-stakes workflows into calm, predictable systems.
-        Over the last years at Amazon Prime Video I’ve been the person in the middle of
-        <strong>troubleshooting, QA and partner support</strong>, connecting global teams and making sure complex issues actually get resolved – and stay resolved.
+        Project Manager and Operations Lead with 10+ years of experience in streaming, digital media and global operations
+        (Amazon Prime Video, Disney+, Paramount+, DAZN, Fox Networks, Antena 3). I specialize in
+        <strong>designing and scaling workflows</strong>, reducing operational friction, and turning complex, multi-team problems
+        into measurable, sustainable solutions.
       </p>
       <p class="small">
-        I’m most at home when I can blend <strong>structured thinking + data + people</strong>:
-        designing audit frameworks, rebuilding error taxonomies, redefining how tickets flow between teams, and coaching SMEs to align around one way of working.
-        Recent work includes implementing a global Audit the Auditor program, standardizing multi-site QA systems, and integrating partner-facing workflows without breaking SLAs.
-      </p>
-      <p class="small">
-        If you’re looking for someone who can <strong>own an operational problem end-to-end</strong> – from mapping the chaos to building the process, training the team and tracking the impact – that’s the space where I add the most value.
+        Across my career, I've led initiatives that reduced duplicated troubleshooting by <strong>30%</strong>, cut time-to-resolution
+        for complex cases by <strong>15%</strong>, enabled <strong>24/7 coverage</strong> with existing headcount, and improved delivery
+        reliability for partners like FIBA, Paramount+ and YouTube Studios. My sweet spot sits between
+        <strong>operations, product, and technology</strong>: aligning teams, standardizing processes, and using data and tools
+        (Jira, Slack workflows, automation, analytics) to drive better decisions and customer outcomes.
       </p>
     </section>
 
@@ -620,7 +615,7 @@
         </div>
         <ul class="clean small">
           <li>Email: <a href="mailto:jeanpaulangulo@gmail.com">jeanpaulangulo@gmail.com</a></li>
-          <li>LinkedIn: <a href="<your-linkedin-url>" target="_blank" rel="noopener">https://www.linkedin.com/in/jeanpaulangulo/</a></li>
+          <li>LinkedIn: <a href="<your-linkedin-url>" target="_blank" rel="noopener"><your-linkedin-url></a></li>
         </ul>
       </aside>
     </section>
