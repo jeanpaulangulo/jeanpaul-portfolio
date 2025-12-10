@@ -13,9 +13,6 @@
   <meta property="og:description" content="Project & Operations lead focused on scalable workflows, QA systems and global troubleshooting for streaming platforms." />
   <meta property="og:type" content="website" />
   <meta property="og:url" content="https://jeanpaulangulo.github.io/portfolio/" />
-  <!-- Optional preview image if you add one later:
-  <meta property="og:image" content="https://jeanpaulangulo.github.io/portfolio/preview.png" />
-  -->
 
   <style>
     :root {
@@ -34,177 +31,16 @@
     html {
       scroll-behavior: smooth;
     }
-    /* ========== RESPONSIVE ========== */
-
-/* Tablets y portátiles pequeños */
-@media (max-width: 768px) {
-
-  .header-hero {
-    padding: 72px 16px 56px;
-  }
-
-  .title {
-    font-size: 2.4rem;
-    letter-spacing: 0.09em;
-  }
-
-  .role-tag {
-    font-size: 0.82rem;
-    padding: 8px 22px;
-    margin-bottom: 16px;
-  }
-
-  .subtitle {
-    font-size: 1.05rem;
-    max-width: 100%;
-    padding: 0 4px;
-  }
-
-  .meta {
-    font-size: 0.85rem;
-    gap: 6px;
-  }
-
-  .pill-row {
-    max-width: 90%;
-    margin-left: auto;
-    margin-right: auto;
-  }
-
-  .pill {
-    font-size: 0.76rem;
-    padding: 3px 8px;
-  }
-
-  .page {
-    padding: 0 14px 36px;
-  }
-
-  .about-section {
-    margin: 16px auto 26px;
-  }
-
-  .module {
-    padding: 16px;
-  }
-
-  .project-card {
-    padding: 14px 12px 12px;
-  }
-
-  .project-card h3 {
-    font-size: 0.9rem;
-  }
-
-  .project-summary,
-  .impact-metrics,
-  .project-details p {
-    font-size: 0.84rem;
-  }
-
-  .skills-text {
-    font-size: 0.88rem;
-  }
-
-  .contact-text {
-    font-size: 0.9rem;
-  }
-}
-
-/* Móviles (pantallas muy pequeñas) */
-@media (max-width: 480px) {
-
-  .header-hero {
-    padding: 68px 14px 50px;
-  }
-
-  .title {
-    font-size: 2rem;
-    letter-spacing: 0.08em;
-  }
-
-  .role-tag {
-    font-size: 0.78rem;
-    padding: 7px 18px;
-  }
-
-  .subtitle {
-    font-size: 0.98rem;
-    line-height: 1.45;
-  }
-
-  .meta {
-    font-size: 0.8rem;
-    gap: 4px;
-  }
-
-  .section-heading {
-    font-size: 0.85rem;
-    margin-bottom: 16px;
-  }
-
-  .about-section {
-    padding: 18px 2px 22px;
-  }
-
-  .small {
-    font-size: 0.88rem;
-  }
-
-  .project-card {
-    padding: 12px 10px 10px;
-    border-radius: 14px;
-  }
-
-  .project-category-label {
-    font-size: 0.62rem;
-    letter-spacing: 0.14em;
-  }
-
-  .project-card h3 {
-    font-size: 0.85rem;
-  }
-
-  .tagline {
-    font-size: 0.8rem;
-  }
-
-  .impact-line {
-    font-size: 0.84rem;
-  }
-
-  .skills-block-title {
-    font-size: 0.75rem;
-  }
-
-  .skill-tag {
-    font-size: 0.76rem;
-    padding: 5px 10px;
-  }
-
-  .contact-title {
-    font-size: 0.9rem;
-  }
-
-  .contact-link {
-    font-size: 0.84rem;
-    padding: 7px 14px;
-  }
-}
-
-    /* --------- GLOBAL BODY + BACKGROUND --------- */
 
     body {
       margin: 0;
-      padding: 56px 0 0; /* espacio para el top nav fijo */
+      padding: 56px 0 0;
       font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
       color: var(--text);
-
       background:
         radial-gradient(circle at 20% 20%, rgba(150,170,255,0.12), transparent 60%),
         radial-gradient(circle at 80% 80%, rgba(100,130,255,0.10), transparent 60%),
         #f5f7ff;
-
       animation: bgPulse 22s ease-in-out infinite;
     }
 
@@ -235,7 +71,7 @@
       padding: 0 16px 48px;
     }
 
-    /* ========= TITLES IN HELVETICA & UPPERCASE ========= */
+    /* TITLES IN HELVETICA & UPPERCASE */
 
     .title,
     .role-tag,
@@ -248,7 +84,7 @@
       letter-spacing: 0.08em;
     }
 
-    /* ========= STICKY TOP NAV ========= */
+    /* NAV */
 
     .top-nav {
       position: fixed;
@@ -294,22 +130,17 @@
       }
     }
 
-    /* ========= HERO FULL WIDTH HEADER ========= */
+    /* HERO */
 
     .header-hero {
       width: 100%;
       padding: 80px 24px 72px;
       text-align: center;
-
-      background:
-        linear-gradient(135deg, rgba(255,255,255,0.78), rgba(245,247,255,0.58));
+      background: linear-gradient(135deg, rgba(255,255,255,0.78), rgba(245,247,255,0.58));
       background-attachment: fixed;
-
       backdrop-filter: blur(10px);
       -webkit-backdrop-filter: blur(10px);
-
       border-bottom: 1px solid rgba(0,0,0,0.06);
-
       animation: fadeUp 0.6s ease-out forwards;
       opacity: 0;
       transform: translateY(16px);
@@ -337,7 +168,7 @@
       font-size: 1.24rem;
       color: var(--muted);
       margin: 0 0 18px;
-      max-width: 880px;     /* más ancho para evitar cortar "scale" sola */
+      max-width: 880px;
       line-height: 1.5;
       margin-left: auto;
       margin-right: auto;
@@ -392,8 +223,6 @@
       background: #ffffff;
     }
 
-    /* Scroll indicator */
-
     .scroll-indicator {
       margin-top: 32px;
       font-size: 0.75rem;
@@ -417,22 +246,17 @@
     }
 
     @keyframes arrowBounce {
-      0%, 100% {
-        transform: translateY(0);
-      }
-      50% {
-        transform: translateY(4px);
-      }
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(4px); }
     }
 
-    /* ========= ABOUT ME ========= */
+    /* ABOUT */
 
     .about-section {
       padding: 26px 4px 30px;
       margin: 20px auto 32px;
       max-width: 850px;
       text-align: center;
-
       animation: fadeUp 0.6s ease-out forwards;
       opacity: 0;
       transform: translateY(20px);
@@ -452,8 +276,6 @@
       margin: 20px 0 32px;
     }
 
-    /* ========= SECTION HEADING (shared) ========= */
-
     .section-heading {
       font-size: 1rem;
       margin: 0 0 20px;
@@ -462,13 +284,13 @@
       font-weight: 700;
     }
 
-    /* ========= PROJECTS GRID ========= */
+    /* PROJECT GRIDS */
 
     .project-grid-top {
       display: grid;
       grid-template-columns: repeat(3, minmax(0,1fr));
       gap: 20px;
-      perspective: 1400px; /* para el tilt 3D de top-project */
+      perspective: 1400px;
     }
 
     @media (max-width: 900px) {
@@ -490,7 +312,7 @@
       margin-bottom: 40px;
     }
 
-    /* ========= PROJECT CARDS (BASE) ========= */
+    /* PROJECT CARDS */
 
     .project-card {
       position: relative;
@@ -499,17 +321,13 @@
       border: 1px solid var(--border);
       padding: 16px 16px 14px;
       padding-top: 18px;
-
       box-shadow: var(--shadow-soft);
       text-align: center;
-
       cursor: default;
       overflow: hidden;
-
       opacity: 0;
       transform: translateY(30px) scale(0.98);
       animation: card-in 0.8s ease forwards;
-
       transition:
         transform 0.9s cubic-bezier(0.22, 0.11, 0.25, 1),
         box-shadow 0.9s cubic-bezier(0.22, 0.11, 0.25, 1),
@@ -518,7 +336,13 @@
         z-index 0.4s ease;
     }
 
-    /* Barra superior de categoría */
+    @keyframes card-in {
+      to {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+      }
+    }
+
     .project-card::before {
       content: "";
       position: absolute;
@@ -529,7 +353,6 @@
       background: #dde3ff;
     }
 
-    /* Colores por categoría */
     .cat-quality::before {
       background: linear-gradient(90deg, #5a7bff, #9c7dff);
     }
@@ -554,13 +377,6 @@
       background: linear-gradient(90deg, #70c2ff, #9b9fff);
     }
 
-    @keyframes card-in {
-      to {
-        opacity: 1;
-        transform: translateY(0) scale(1);
-      }
-    }
-
     .project-category-label {
       font-family: "Helvetica", "Helvetica Neue", Arial, sans-serif;
       font-size: 0.68rem;
@@ -568,6 +384,20 @@
       text-transform: uppercase;
       color: #8a8fb3;
       margin: 4px 0 6px;
+    }
+
+    .top-badge {
+      display: inline-block;
+      margin-top: 2px;
+      margin-bottom: 8px;
+      padding: 3px 10px;
+      background: #e4e8ff;
+      color: #3a4a96;
+      font-family: "Helvetica", "Helvetica Neue", Arial, sans-serif;
+      font-size: 0.65rem;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      border-radius: 999px;
     }
 
     .project-card h3 {
@@ -610,7 +440,6 @@
       max-height: 0;
       overflow: hidden;
       opacity: 0;
-
       transition:
         max-height 0.8s ease,
         opacity 0.6s ease,
@@ -629,26 +458,10 @@
       margin-top: 10px;
     }
 
-    /* ========= DIFFERENTIATION: TOP vs MORE PROJECTS ========= */
-
     .top-project {
       background: linear-gradient(180deg, #ffffff, #f6f7ff);
       border-color: #ccd6ff;
       transform-style: preserve-3d;
-    }
-
-    .top-project::after {
-      content: "TOP PROJECT";
-      position: absolute;
-      top: 8px;
-      right: 12px;
-      font-size: 0.65rem;
-      letter-spacing: 0.16em;
-      text-transform: uppercase;
-      color: #3a4a96;
-      background: #e4e8ff;
-      padding: 2px 8px;
-      border-radius: 999px;
     }
 
     .top-project:hover {
@@ -671,7 +484,7 @@
       z-index: 30;
     }
 
-    /* ========= MODULES (WRAPPER CARDS) ========= */
+    /* MODULES */
 
     .module {
       background: var(--card-bg);
@@ -679,11 +492,9 @@
       border: 1px solid var(--border);
       padding: 20px;
       box-shadow: var(--shadow-soft);
-
       opacity: 0;
       transform: translateY(18px);
       animation: fadeUp 0.7s ease-out forwards;
-
       transition:
         transform 0.25s ease-out,
         box-shadow 0.25s ease-out,
@@ -706,7 +517,7 @@
       max-width: 100%;
     }
 
-    /* ====== SKILLS & TOOLS CUSTOM (HORIZONTAL) ====== */
+    /* SKILLS & TOOLS */
 
     .skills-section {
       margin-top: 10px;
@@ -757,7 +568,7 @@
 
     .skills-icon {
       font-size: 0.95rem;
-      text-transform: none; /* para que el emoji no se vea afectado */
+      text-transform: none;
     }
 
     .skill-tags {
@@ -785,7 +596,7 @@
       background: #ffffff;
     }
 
-    /* ========= CONTACT ========= */
+    /* CONTACT */
 
     .contact-section {
       margin: 10px auto 0;
@@ -833,7 +644,7 @@
       background: #ffffff;
     }
 
-    /* ========= ANIMATION ========= */
+    /* ANIMATIONS */
 
     @keyframes fadeUp {
       to {
@@ -842,12 +653,133 @@
       }
     }
 
+    /* RESPONSIVE */
+
+    @media (max-width: 768px) {
+      .header-hero {
+        padding: 72px 16px 56px;
+      }
+      .title {
+        font-size: 2.4rem;
+        letter-spacing: 0.09em;
+      }
+      .role-tag {
+        font-size: 0.82rem;
+        padding: 8px 22px;
+        margin-bottom: 16px;
+      }
+      .subtitle {
+        font-size: 1.05rem;
+        max-width: 100%;
+        padding: 0 4px;
+      }
+      .meta {
+        font-size: 0.85rem;
+        gap: 6px;
+      }
+      .pill-row {
+        max-width: 90%;
+        margin-left: auto;
+        margin-right: auto;
+      }
+      .pill {
+        font-size: 0.76rem;
+        padding: 3px 8px;
+      }
+      .page {
+        padding: 0 14px 36px;
+      }
+      .about-section {
+        margin: 16px auto 26px;
+      }
+      .module {
+        padding: 16px;
+      }
+      .project-card {
+        padding: 14px 12px 12px;
+      }
+      .project-card h3 {
+        font-size: 0.9rem;
+      }
+      .project-summary,
+      .impact-metrics,
+      .project-details p {
+        font-size: 0.84rem;
+      }
+      .skills-text {
+        font-size: 0.88rem;
+      }
+      .contact-text {
+        font-size: 0.9rem;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .header-hero {
+        padding: 68px 14px 50px;
+      }
+      .title {
+        font-size: 2rem;
+        letter-spacing: 0.08em;
+      }
+      .role-tag {
+        font-size: 0.78rem;
+        padding: 7px 18px;
+      }
+      .subtitle {
+        font-size: 0.98rem;
+        line-height: 1.45;
+      }
+      .meta {
+        font-size: 0.8rem;
+        gap: 4px;
+      }
+      .section-heading {
+        font-size: 0.85rem;
+        margin-bottom: 16px;
+      }
+      .about-section {
+        padding: 18px 2px 22px;
+      }
+      .small {
+        font-size: 0.88rem;
+      }
+      .project-card {
+        padding: 12px 10px 10px;
+        border-radius: 14px;
+      }
+      .project-category-label {
+        font-size: 0.62rem;
+        letter-spacing: 0.14em;
+      }
+      .project-card h3 {
+        font-size: 0.85rem;
+      }
+      .tagline {
+        font-size: 0.8rem;
+      }
+      .impact-line {
+        font-size: 0.84rem;
+      }
+      .skills-block-title {
+        font-size: 0.75rem;
+      }
+      .skill-tag {
+        font-size: 0.76rem;
+        padding: 5px 10px;
+      }
+      .contact-title {
+        font-size: 0.9rem;
+      }
+      .contact-link {
+        font-size: 0.84rem;
+        padding: 7px 14px;
+      }
+    }
   </style>
 </head>
 
 <body>
-
-  <!-- ================= STICKY NAV ================= -->
   <nav class="top-nav">
     <a href="#about">About</a>
     <a href="#key-projects">Key Projects</a>
@@ -855,8 +787,6 @@
     <a href="#skills">Skills</a>
     <a href="#contact">Contact</a>
   </nav>
-
-  <!-- ================= HERO FULL-WIDTH HEADER ================= -->
 
   <header class="header-hero">
     <h1 class="title">JEAN PAUL ANGULO</h1>
@@ -894,27 +824,21 @@
     </div>
   </header>
 
-  <!-- ================= PAGE CONTENT ================= -->
-
   <main class="page">
-
-    <!-- ABOUT ME -->
+    <!-- ABOUT -->
     <section id="about" class="about-section">
       <p class="section-heading">ABOUT ME</p>
-
       <p class="small">
         Project Manager and Operations Lead with 10+ years of experience in streaming, digital media and global operations
         (Amazon Prime Video, Disney+, Paramount+, DAZN, Fox Networks, Antena 3). I specialize in
         <strong>designing and scaling workflows</strong>, reducing operational friction, and turning complex, multi-team problems
         into measurable, sustainable solutions.
       </p>
-
       <p class="small">
         Across my career, I've led initiatives that reduced duplicated troubleshooting by <strong>30%</strong>, cut time-to-resolution
         for complex cases by <strong>15%</strong>, enabled <strong>24/7 coverage</strong> with existing headcount, and improved delivery
         reliability for partners like FIBA, Paramount+ and YouTube Studios.
       </p>
-
       <p class="small">
         My sweet spot sits between <strong>operations, product, and technology</strong>:
         aligning teams, standardizing processes, and using data and tools (Jira, Slack workflows, analytics) to drive better
@@ -924,17 +848,16 @@
 
     <div class="section-divider"></div>
 
-    <!-- KEY PROJECTS WRAPPED IN CARD -->
+    <!-- KEY PROJECTS -->
     <section id="key-projects" class="projects-section">
       <aside class="module projects-module">
         <div class="projects-module-inner">
           <p class="section-heading">KEY PROJECTS (TOP 3)</p>
 
           <div class="project-grid-top">
-
-            <!-- PROJECT 1 -->
             <article class="project-card top-project cat-quality">
               <p class="project-category-label">QUALITY SYSTEMS</p>
+              <span class="top-badge">TOP PROJECT</span>
               <h3>GLOBAL AUDIT THE AUDITOR (ATA) PROGRAM</h3>
               <p class="tagline">Prime Video · Quality Systems</p>
               <p class="impact-line">
@@ -944,7 +867,6 @@
               <p class="project-summary">
                 Designed and rolled out a unified ATA system for troubleshooting workflows.
               </p>
-
               <div class="project-details">
                 <p><strong>Role:</strong> Project lead and global SME for the ATA model in Madrid.</p>
                 <p><strong>Scope:</strong> 3 regions (Madrid, Chennai, San José) · troubleshooting QA across multiple workflows.</p>
@@ -952,9 +874,9 @@
               </div>
             </article>
 
-            <!-- PROJECT 2 -->
             <article class="project-card top-project cat-ops">
               <p class="project-category-label">GLOBAL OPERATIONS</p>
+              <span class="top-badge">TOP PROJECT</span>
               <h3>GLOBAL QA FRAMEWORK – UNIFIED AUDIT SYSTEM</h3>
               <p class="tagline">Prime Video · Multi-Site Operations</p>
               <p class="impact-line">
@@ -964,7 +886,6 @@
               <p class="project-summary">
                 Consolidated fragmented QA processes into a single scalable audit structure.
               </p>
-
               <div class="project-details">
                 <p><strong>Role:</strong> Co-designer of the global QA framework and audit templates.</p>
                 <p><strong>Scope:</strong> Multi-region troubleshooting teams, cross-workflow coverage and tool migrations.</p>
@@ -972,9 +893,9 @@
               </div>
             </article>
 
-            <!-- PROJECT 3 -->
             <article class="project-card top-project cat-workflow">
               <p class="project-category-label">WORKFLOWS & PARTNER EXPERIENCE</p>
+              <span class="top-badge">TOP PROJECT</span>
               <h3>SUPPORT EXCELLENCE & TICKETING WORKFLOW INTEGRATION</h3>
               <p class="tagline">Prime Video · Troubleshooting & PS</p>
               <p class="impact-line">
@@ -984,14 +905,12 @@
               <p class="project-summary">
                 Integrated Internal Support, Partner Support and Redelivery workflows.
               </p>
-
               <div class="project-details">
                 <p><strong>Role:</strong> Operational lead connecting SME teams and defining the new end-to-end flow.</p>
                 <p><strong>Scope:</strong> Internal Support, Partner Support and Redelivery teams, including cross-team hand-offs.</p>
                 <p><strong>Impact:</strong> Reduced duplicated work and unclear ownership, shortened time-to-resolution for complex tickets, and improved clarity for partners on how issues are routed and resolved.</p>
               </div>
             </article>
-
           </div>
         </div>
       </aside>
@@ -1004,7 +923,6 @@
       <p class="section-heading">MORE PROJECTS</p>
 
       <div class="project-grid-more">
-
         <article class="project-card secondary-project cat-people">
           <p class="project-category-label">PEOPLE & PERFORMANCE</p>
           <h3>GLOBAL PERFORMANCE CALIBRATION SYSTEM</h3>
@@ -1014,7 +932,6 @@
             <span class="impact-metrics">SME calibration framework and criteria across teams.</span>
           </p>
           <p class="project-summary">Helped design a global performance model.</p>
-
           <div class="project-details">
             <p><strong>Role:</strong> Contributor to SME calibration framework and criteria definition.</p>
             <p><strong>Impact:</strong> Balanced quantitative KPIs and qualitative impact, driving fairer evaluations and clearer growth areas for SME roles.</p>
@@ -1030,7 +947,6 @@
             <span class="impact-metrics">Central tracker for TVOD partners and priorities.</span>
           </p>
           <p class="project-summary">Implemented a tracker for priorities and blockers.</p>
-
           <div class="project-details">
             <p><strong>Role:</strong> Owner of the TVOD tracking structure for Madrid site.</p>
             <p><strong>Impact:</strong> Enabled leadership to identify risks, delays and operational bottlenecks faster, improving launch predictability.</p>
@@ -1046,7 +962,6 @@
             <span class="impact-metrics">Alignment of internal flows with partner expectations.</span>
           </p>
           <p class="project-summary">Aligned internal and partner-facing flows.</p>
-
           <div class="project-details">
             <p><strong>Role:</strong> SME link between Redelivery and Partner Support teams.</p>
             <p><strong>Impact:</strong> Reduced confusion for partners and internal teams by defining clearer case-routing expectations and ownership.</p>
@@ -1062,7 +977,6 @@
             <span class="impact-metrics">More actionable error categories for reporting and RCA.</span>
           </p>
           <p class="project-summary">Reworked vague categories into actionable taxonomy.</p>
-
           <div class="project-details">
             <p><strong>Role:</strong> Co-owner of the new taxonomy design for troubleshooting errors.</p>
             <p><strong>Impact:</strong> Enabled trend analysis and better workflow insights across Internal Support, improving the quality of RCA and reporting.</p>
@@ -1078,7 +992,6 @@
             <span class="impact-metrics">Pilot for routing and correcting metadata issues.</span>
           </p>
           <p class="project-summary">Helped define pilot use cases and success metrics.</p>
-
           <div class="project-details">
             <p><strong>Role:</strong> SME participant in pilot design and feedback loop.</p>
             <p><strong>Impact:</strong> Improved correction speed and data accuracy by defining clearer ticket flows and decision points for metadata issues.</p>
@@ -1094,7 +1007,6 @@
             <span class="impact-metrics">ATM allocation logic for complex work.</span>
           </p>
           <p class="project-summary">Helped structure ATM assignment logic.</p>
-
           <div class="project-details">
             <p><strong>Role:</strong> Contributor to the ATM allocation proposal and logic.</p>
             <p><strong>Impact:</strong> Reduced burnout risk and ensured critical tasks reached the right SMEs, improving continuity of service quality.</p>
@@ -1110,7 +1022,6 @@
             <span class="impact-metrics">Best-in-class KPIs while leading improvements.</span>
           </p>
           <p class="project-summary">Combined volume + quality + ownership.</p>
-
           <div class="project-details">
             <p><strong>Role:</strong> Top performer in troubleshooting KPIs.</p>
             <p><strong>Impact:</strong> Maintained best-in-class metrics while contributing to global improvement initiatives and training efforts.</p>
@@ -1126,25 +1037,22 @@
             <span class="impact-metrics">Shared QA guidelines across multi-site troubleshooting.</span>
           </p>
           <p class="project-summary">Supported the creation of shared QA guidelines.</p>
-
           <div class="project-details">
             <p><strong>Role:</strong> SME representative for Madrid in multi-site QA alignment.</p>
             <p><strong>Impact:</strong> Reduced misalignment between Madrid, Chennai and San José during tool migrations and process changes.</p>
           </div>
         </article>
-
       </div>
     </section>
 
     <div class="section-divider"></div>
 
-    <!-- SKILLS & TOOLS FULL-WIDTH -->
+    <!-- SKILLS & TOOLS -->
     <section id="skills" class="skills-section">
       <p class="section-heading">SKILLS & TOOLS</p>
 
       <aside class="module skills-module">
         <div class="skills-module-inner">
-
           <p class="skills-block-title">
             <span class="skills-icon">⭐</span> CORE SKILLS
           </p>
@@ -1191,7 +1099,6 @@
             <span class="skill-tag">Slack workflows</span>
             <span class="skill-tag">SharePoint</span>
           </div>
-
         </div>
       </aside>
     </section>
@@ -1219,7 +1126,6 @@
         </div>
       </aside>
     </section>
-
   </main>
 </body>
 </html>
