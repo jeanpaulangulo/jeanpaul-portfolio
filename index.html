@@ -150,6 +150,7 @@
       grid-template-columns: repeat(3, minmax(0, 1fr));
       gap: 18px;
       margin-bottom: 26px;
+      overflow: visible; /* permitir que el hover sobresalga a los lados */
     }
 
     .project-grid-more {
@@ -157,6 +158,7 @@
       grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
       gap: 18px;
       margin-bottom: 32px;
+      overflow: visible;
     }
 
     @media (max-width: 950px) {
@@ -184,27 +186,28 @@
       transform: translateY(18px);
       animation: fadeUp 0.6s ease-out forwards;
       transition:
-        transform 0.3s ease,
-        box-shadow 0.3s ease,
-        border-color 0.3s ease,
-        background 0.3s ease,
+        transform 0.32s ease,
+        box-shadow 0.32s ease,
+        border-color 0.32s ease,
+        background 0.32s ease,
         z-index 0.2s ease;
-      text-align: center; /* centrar contenido */
+      text-align: center;
+      transform-origin: center center; /* expande hacia todos los lados */
     }
 
     /* HOVER LIMPIO, SUAVE Y EXPANSIVO (también a los lados) */
     .project-card:hover {
-      transform: translateY(-6px) scale(1.08);
-      box-shadow: 0 28px 60px rgba(0, 0, 0, 0.16);
+      transform: translateY(-6px) scale(1.10);
+      box-shadow: 0 30px 70px rgba(0, 0, 0, 0.18);
       border-color: #c3d4ff;
       background: #ffffff;
-      z-index: 20;
+      z-index: 30;
       position: relative;
     }
 
     .project-card h3 {
       margin: 0 0 6px;
-      font-size: 1.05rem;
+      font-size: 1.02rem;
       text-align: center;
     }
 
@@ -329,196 +332,246 @@
       </div>
     </header>
 
-    <!-- ABOUT ME -->
+    <!-- ABOUT ME (más sugerente) -->
     <section class="module">
       <p class="section-label">About</p>
       <h2 class="section-title">About Me</h2>
       <p class="small">
-        Project Manager and Operations Lead with 10+ years of experience in streaming, digital media and global operations (Amazon Prime Video, Disney+, Paramount+, DAZN, Fox Networks, Antena 3). I specialize in
-        <strong>designing and scaling workflows</strong>, reducing operational friction, and turning complex, multi-team problems into measurable, sustainable solutions.
+        I’m a project and operations lead who enjoys turning messy, high-stakes workflows into calm, predictable systems.
+        Over the last years at Amazon Prime Video I’ve been the person in the middle of
+        <strong>troubleshooting, QA and partner support</strong>, connecting global teams and making sure complex issues actually get resolved – and stay resolved.
       </p>
       <p class="small">
-        Across my career, I've led initiatives that reduced duplicated troubleshooting by <strong>30%</strong>, cut time-to-resolution for complex cases by <strong>15%</strong>, enabled <strong>24/7 coverage</strong> with existing headcount, and improved delivery reliability for partners like FIBA, Paramount+ and YouTube Studios. My sweet spot sits between
-        <strong>operations, product, and technology</strong>: aligning teams, standardizing processes, and using data and tools (Jira, Slack workflows, automation, analytics) to drive better decisions and customer outcomes.
+        I’m most at home when I can blend <strong>structured thinking + data + people</strong>:
+        designing audit frameworks, rebuilding error taxonomies, redefining how tickets flow between teams, and coaching SMEs to align around one way of working.
+        Recent work includes implementing a global Audit the Auditor program, standardizing multi-site QA systems, and integrating partner-facing workflows without breaking SLAs.
+      </p>
+      <p class="small">
+        If you’re looking for someone who can <strong>own an operational problem end-to-end</strong> – from mapping the chaos to building the process, training the team and tracking the impact – that’s the space where I add the most value.
       </p>
     </section>
 
-    <!-- TOP 3 PROJECTS -->
+    <!-- TOP 3 PROJECTS (BASEBALL CARD) -->
     <section>
       <p class="section-heading">Key Projects (Top 3)</p>
       <div class="project-grid-top">
         <!-- TOP PROJECT 1 -->
         <article class="project-card">
-          <h3>Global Troubleshooting Workflow Standardization</h3>
-          <p class="tagline">Amazon Prime Video · Global Operations</p>
+          <h3>Global Audit the Auditor (ATA) Program</h3>
+          <p class="tagline">Prime Video · Quality Systems</p>
           <p class="impact-line">
-            <strong>30%</strong> less duplicated work · <strong>15%</strong> faster complex case resolution.
+            Cut QA blind spots and raised confidence in audit results across regions.
           </p>
           <p class="project-summary">
-            Unified how regional teams approach complex cases by aligning SMEs and consolidating workflows.
+            Designed and rolled out a unified “audit the auditor” system for troubleshooting workflows.
           </p>
           <div class="project-details">
             <p>
-              Led cross-regional SME forums connecting JP, IN, CR and EU, identified overlapping processes, and created shared playbooks and best-practice guidelines. This reduced repeated troubleshooting, improved visibility into root causes, and strengthened trust between regions.
+              Built a global ATA framework covering criteria, sampling, scoring and follow-up actions, aligning multiple regions on a single quality bar.
+              The program reduced inconsistent scoring, increased transparency in audits, and created a repeatable way to spot and fix QA weaknesses early.
             </p>
           </div>
         </article>
 
         <!-- TOP PROJECT 2 -->
         <article class="project-card">
-          <h3>Redelivery → Partner Support Workflow Integration</h3>
-          <p class="tagline">Amazon Prime Video · Workflow Integration</p>
+          <h3>Global QA Framework – Unified Audit System</h3>
+          <p class="tagline">Prime Video · Multi-Site Operations</p>
           <p class="impact-line">
-            <strong>20%+</strong> additional volume absorbed · zero SLA impact.
+            Created one QA system for multi-site troubleshooting teams.
           </p>
           <p class="project-summary">
-            Rebuilt a fragmented process into a single, scalable partner-facing workflow.
+            Consolidated fragmented QA approaches into a single, scalable audit framework.
           </p>
           <div class="project-details">
             <p>
-              Mapped the end-to-end lifecycle of partner-impacting issues, redesigned SOPs with clear ownership, and implemented better tracking for redeliveries. This allowed the team to handle more cases without sacrificing speed or customer experience.
+              Partnered with PMs, SMEs and QA leads to redesign audit forms, error categories and scoring logic,
+              making it possible to compare quality across sites and workflows. This improved trust in metrics and made QA a lever for continuous improvement instead of just a control mechanism.
             </p>
           </div>
         </article>
 
         <!-- TOP PROJECT 3 -->
         <article class="project-card">
-          <h3>Global Handover Model & 24/7 Operational Coverage</h3>
-          <p class="tagline">Amazon Prime Video · Follow-the-Sun Design</p>
+          <h3>Support Excellence & Ticketing Workflow Integration</h3>
+          <p class="tagline">Prime Video · Digiflex Troubleshooting</p>
           <p class="impact-line">
-            <strong>3×</strong> effective coverage · same headcount.
+            Reduced friction between ticketing streams and stabilized partner experience.
           </p>
           <p class="project-summary">
-            Designed a structured handover model connecting four regions into a continuous operation.
+            Integrated Digiflex ticketing workflows to avoid duplicated effort and unclear ownership.
           </p>
           <div class="project-details">
             <p>
-              Defined a follow-the-sun framework with standard handover templates, priority signals, and escalation rules across Madrid, Chennai, Costa Rica and Tokyo. Reduced idle time between shifts, protected SLAs, and added predictability for high-risk cases.
+              Mapped end-to-end ticket flows across Internal Support, Partner Support and Redelivery, identified hand-off gaps, and redesigned queues and SOPs.
+              The new model clarified responsibilities, reduced back-and-forth on cases, and improved time to resolution without adding headcount.
             </p>
           </div>
         </article>
       </div>
     </section>
 
-    <!-- MORE PROJECTS -->
+    <!-- MORE PROJECTS (BASEBALL CARD) -->
     <section>
       <p class="section-heading">More Projects</p>
       <div class="project-grid-more">
-        <!-- FIBA / DAZN -->
+        <!-- Calibration System -->
         <article class="project-card">
-          <h3>FIBA Live Events SOP & Delivery Tracker</h3>
-          <p class="tagline">DAZN · Live Events & VOD</p>
+          <h3>Global Performance Calibration System</h3>
+          <p class="tagline">Prime Video · People & Performance</p>
           <p class="impact-line">
-            Late deliveries reduced from <strong>34%</strong> to <strong>11%</strong>.
+            Brought structure and fairness to SME performance discussions.
           </p>
           <p class="project-summary">
-            Turned ad-hoc support into a structured, trackable workflow for international basketball events.
+            Helped design and implement a calibration model for troubleshooting performance.
           </p>
           <div class="project-details">
             <p>
-              Built an end-to-end SOP, delivery tracker and client-facing communication model for FIBA tournaments, enabling faster issue detection, clearer expectations for live event assets, and more transparent reporting to the client during peak periods.
-            </p>
-          </div>
-        </article>
-
-        <!-- Slack Workflows / Paramount+ -->
-        <article class="project-card">
-          <h3>Slack Workflows & Channel Redesign</h3>
-          <p class="tagline">Paramount+ · Internal Client Communication</p>
-          <p class="impact-line">
-            Saved <strong>80+ hours/month</strong> in alignment meetings.
-          </p>
-          <p class="project-summary">
-            Replaced noisy, unstructured chats with workflow-based, trackable requests.
-          </p>
-          <div class="project-details">
-            <p>
-              Designed three purpose-specific Slack channels (pre-launch issues, fast-track titles at risk, catalogue redeliveries) and built workflow templates with mandatory fields (title, region, date, priority, brand, issue type). This eliminated a recurring weekly 1-hour meeting per stakeholder group and enabled proper tracking of request volume.
-            </p>
-          </div>
-        </article>
-
-        <!-- Testlio QC / Jira -->
-        <article class="project-card">
-          <h3>Testlio QC Migration – From Excel to Jira</h3>
-          <p class="tagline">Paramount · QC & Data</p>
-          <p class="impact-line">
-            ~<strong>2,600</strong> issues processed → stabilized at ~<strong>100</strong>/month.
-          </p>
-          <p class="project-summary">
-            Brought structure and analytics to large-scale QC findings and redeliveries.
-          </p>
-          <div class="project-details">
-            <p>
-              Led the migration of external QC reports (Testlio) into Jira by redefining fields, workflows and ownership with all media supply chain teams. The initial backlog of thousands of issues was processed and long-term volume dropped dramatically as root causes were fixed.
-            </p>
-          </div>
-        </article>
-
-        <!-- YouTube Studios Launch -->
-        <article class="project-card">
-          <h3>YouTube Studios Launch – Multi-Region Delivery</h3>
-          <p class="tagline">Paramount · Launch Operations</p>
-          <p class="impact-line">
-            ~<strong>26,000</strong> assets delivered · <strong>99.8%</strong> on time.
-          </p>
-          <p class="project-summary">
-            Co-led content delivery for YouTube Studios across UK, FR, DE and AU under tight timelines.
-          </p>
-          <div class="project-details">
-            <p>
-              Coordinated with localization, metadata and delivery teams, set up dedicated Slack channels and weekly check-ins, and tracked risks proactively. Achieved on-time delivery for almost all required assets, with only a small fraction delayed due to external dependencies.
+              Co-created a framework that balanced quantitative KPIs (SLAs, AHT, volume) with qualitative impact, enabling more consistent recognition of high performers
+              and clearer development signals for the team.
             </p>
           </div>
         </article>
 
         <!-- Kamino 2.0 -->
         <article class="project-card">
-          <h3>Kamino 2.0 SOP Migration & Training</h3>
-          <p class="tagline">Amazon Prime Video · SOP & Enablement</p>
+          <h3>Kamino 2.0 Walkthrough & Enablement</h3>
+          <p class="tagline">Prime Video · Tool Adoption</p>
           <p class="impact-line">
-            Reduced training-related errors and onboarding time.
+            Turned a complex internal tool into something teams could actually use.
           </p>
           <p class="project-summary">
-            Rebuilt core troubleshooting documentation and trained global teams on the new model.
+            Translated Kamino 2.0 from “confusing product” into clear, usable workflows for SMEs.
           </p>
           <div class="project-details">
             <p>
-              Authored detailed SOPs for Kamino 2.0 workflows, ran global training sessions and shadowing programs, and used AI-assisted documentation to keep content up to date. This improved consistency in case handling and made onboarding more efficient.
+              Produced walkthroughs, SOPs and training sessions for Kamino 2.0, simplifying core flows and embedding them into day-to-day troubleshooting.
+              This reduced confusion, onboarding time and error rates linked to the tool.
             </p>
           </div>
         </article>
 
-        <!-- QA Calibration -->
+        <!-- TVOD Account Management -->
         <article class="project-card">
-          <h3>QA Calibration Re-Alignment Across Regions</h3>
-          <p class="tagline">Amazon Prime Video · Quality & Calibration</p>
+          <h3>TVOD Account Management – Madrid Site</h3>
+          <p class="tagline">Prime Video · Ownership & Tooling</p>
           <p class="impact-line">
-            Higher QA consistency and stronger trust in scores.
+            Centralized scattered TVOD data into a single operational view.
           </p>
           <p class="project-summary">
-            Rebuilt the calibration model for audits across multiple locations.
+            Designed and implemented a management tracker for TVOD accounts and priorities.
           </p>
           <div class="project-details">
             <p>
-              Defined clearer QA criteria, led calibration cycles with SMEs and auditors, and created reference materials that helped align expectations. This reduced variance between reviewers and restored confidence in quality metrics.
+              Created a clear, reusable structure to track account status, priorities, blockers and follow-ups,
+              making it easier for leadership and SMEs to see where attention was needed and to avoid dropped balls.
             </p>
           </div>
         </article>
 
-        <!-- Tokyo Offsite -->
+        <!-- Partner Support Redelivery -->
         <article class="project-card">
-          <h3>Tokyo Global Offsite – Leadership Alignment</h3>
-          <p class="tagline">Amazon Prime Video · Strategy & Collaboration</p>
+          <h3>Partner Support: Redelivery Onboard</h3>
+          <p class="tagline">Prime Video · Workflow Integration</p>
           <p class="impact-line">
-            New escalation & communication model adopted globally.
+            Enabled cleaner partner-facing communication on redelivery issues.
           </p>
           <p class="project-summary">
-            Brought together global leaders to reset how troubleshooting teams connect and escalate.
+            Helped onboard redelivery work into Partner Support with clear rules and visibility.
           </p>
           <div class="project-details">
             <p>
-              Designed and facilitated a multi-day offsite focused on clarifying responsibilities, escalation paths and communication rules. The resulting framework was adopted by global troubleshooting teams and used as a baseline for future initiatives.
+              Worked on SOPs, communication guidance and case routing so that redelivery-related problems could be handled in a single, partner-facing workflow,
+              reducing confusion for external partners and simplifying internal coordination.
+            </p>
+          </div>
+        </article>
+
+        <!-- Error Taxonomy Redesign -->
+        <article class="project-card">
+          <h3>Error Taxonomy Redesign – Internal Support</h3>
+          <p class="tagline">Prime Video · Data & Insights</p>
+          <p class="impact-line">
+            Improved signal quality for troubleshooting and root cause analysis.
+          </p>
+          <p class="project-summary">
+            Reworked error categories to move away from “other” and vague buckets.
+          </p>
+          <div class="project-details">
+            <p>
+              Partnered with PMs and SMEs to design a more granular, meaningful taxonomy for Internal Support issues,
+              unlocking better reporting, trend analysis and more targeted process fixes.
+            </p>
+          </div>
+        </article>
+
+        <!-- Metadata Corrections Pilot -->
+        <article class="project-card">
+          <h3>ATM: Metadata – Internal Corrections Pilot</h3>
+          <p class="tagline">Prime Video · Pilot & Automation</p>
+          <p class="impact-line">
+            Tested a new way of handling metadata corrections from troubleshooting.
+          </p>
+          <p class="project-summary">
+            Participated in a pilot to route metadata issues more efficiently and with better tracking.
+          </p>
+          <div class="project-details">
+            <p>
+              Worked on defining use cases, feedback loops and success metrics for the pilot, helping refine how metadata-related tickets were surfaced, corrected and monitored across workflows.
+            </p>
+          </div>
+        </article>
+
+        <!-- Workload Allocation -->
+        <article class="project-card">
+          <h3>Optimizing Workload Allocation (ATM)</h3>
+          <p class="tagline">Prime Video · Capacity & Planning</p>
+          <p class="impact-line">
+            Gave structure to how complex troubleshooting work is distributed.
+          </p>
+          <p class="project-summary">
+            Helped rethink how ATM tasks and high-complexity tickets are assigned and tracked.
+          </p>
+          <div class="project-details">
+            <p>
+              Contributed to models that balance task complexity, SME expertise and site strategy,
+              ensuring that critical work is handled by the right people while avoiding burnout and blind spots.
+            </p>
+          </div>
+        </article>
+
+        <!-- Ticket Resolution KPIs -->
+        <article class="project-card">
+          <h3>Exceeding Ticket Resolution KPIs</h3>
+          <p class="tagline">Prime Video · Individual & Team Impact</p>
+          <p class="impact-line">
+            Consistently outperformed resolution and quality targets in troubleshooting.
+          </p>
+          <p class="project-summary">
+            Combined volume, quality and ownership to support broader SME responsibilities.
+          </p>
+          <div class="project-details">
+            <p>
+              Used data and structured follow-up to keep resolution times, quality scores and customer impact above expectations,
+              while also dedicating time to projects like QA frameworks, training and workflow redesign.
+            </p>
+          </div>
+        </article>
+
+        <!-- Multi-Site QA Standardization -->
+        <article class="project-card">
+          <h3>Standardizing QA Across Multi-Site Troubleshooting</h3>
+          <p class="tagline">Prime Video · Global Alignment</p>
+          <p class="impact-line">
+            Helped unify quality expectations between regions and workflows.
+          </p>
+          <p class="project-summary">
+            Supported the creation of shared QA guidelines after system and process changes.
+          </p>
+          <div class="project-details">
+            <p>
+              Worked with global stakeholders to adapt QA standards after tool and workflow migrations,
+              reducing misalignment between regions and ensuring that metrics still reflected reality.
             </p>
           </div>
         </article>
@@ -532,7 +585,7 @@
         <h3 class="section-title">Skills & Tools</h3>
         <ul class="clean small">
           <li><strong>Core skills:</strong> Project Management, Operational Excellence, Continuous Improvement, Stakeholder Alignment, Troubleshooting, Workflow Design, SOP Development, Training & Enablement, Data-Informed Decisions.</li>
-          <li><strong>Domains:</strong> Streaming & OTT, Digital Content Operations, Media Supply Chain, QA & Calibration, Launch Operations, Live Events & VOD.</li>
+          <li><strong>Domains:</strong> Streaming & OTT, Digital Content Operations, Media Supply Chain, QA & Calibration, Launch Operations, Partner Support.</li>
           <li><strong>Tools:</strong> Excel (Advanced), Airtable, Jira, Salesforce, Asana, Slack Workflow Builder, SharePoint.</li>
         </ul>
       </aside>
