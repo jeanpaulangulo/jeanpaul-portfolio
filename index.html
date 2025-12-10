@@ -4,6 +4,7 @@
   <meta charset="UTF-8" />
   <title>Jean Paul Angulo – Project & Operations Portfolio</title>
   <meta name="viewport" content="width=device-width, initial-scale=1" />
+  
   <style>
     :root {
       --bg: #f5f5f5;
@@ -16,43 +17,41 @@
       --shadow-soft: 0 10px 30px rgba(0, 0, 0, 0.06);
     }
 
-    * {
-      box-sizing: border-box;
-    }
+    * { box-sizing: border-box; }
+
+    /* --------- GLOBAL BODY + BACKGROUND --------- */
 
     body {
       margin: 0;
-      padding: 32px 16px 48px;
+      padding: 0;
       font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
       color: var(--text);
 
-      /* Fondo B con gradientes suaves */
       background:
-        radial-gradient(circle at 20% 20%, rgba(150, 170, 255, 0.12), transparent 60%),
-        radial-gradient(circle at 80% 80%, rgba(100, 130, 255, 0.10), transparent 60%),
+        radial-gradient(circle at 20% 20%, rgba(150,170,255,0.12), transparent 60%),
+        radial-gradient(circle at 80% 80%, rgba(100,130,255,0.10), transparent 60%),
         #f5f7ff;
 
-      /* Animación muy suave del fondo */
       animation: bgPulse 22s ease-in-out infinite;
     }
 
     @keyframes bgPulse {
       0% {
         background:
-          radial-gradient(circle at 20% 20%, rgba(150, 170, 255, 0.12), transparent 60%),
-          radial-gradient(circle at 80% 80%, rgba(100, 130, 255, 0.10), transparent 60%),
+          radial-gradient(circle at 20% 20%, rgba(150,170,255,0.12), transparent 60%),
+          radial-gradient(circle at 80% 80%, rgba(100,130,255,0.10), transparent 60%),
           #f5f7ff;
       }
       50% {
         background:
-          radial-gradient(circle at 22% 22%, rgba(150, 170, 255, 0.16), transparent 63%),
-          radial-gradient(circle at 78% 78%, rgba(100, 130, 255, 0.13), transparent 63%),
+          radial-gradient(circle at 22% 22%, rgba(150,170,255,0.16), transparent 63%),
+          radial-gradient(circle at 78% 78%, rgba(100,130,255,0.13), transparent 63%),
           #f5f7ff;
       }
       100% {
         background:
-          radial-gradient(circle at 20% 20%, rgba(150, 170, 255, 0.12), transparent 60%),
-          radial-gradient(circle at 80% 80%, rgba(100, 130, 255, 0.10), transparent 60%),
+          radial-gradient(circle at 20% 20%, rgba(150,170,255,0.12), transparent 60%),
+          radial-gradient(circle at 80% 80%, rgba(100,130,255,0.10), transparent 60%),
           #f5f7ff;
       }
     }
@@ -60,27 +59,23 @@
     .page {
       max-width: 1100px;
       margin: 0 auto;
+      padding: 0 16px 48px;
     }
 
-    /* ----------- HERO HEADER (VERSION C) ----------- */
+    /* ========= HERO FULL WIDTH HEADER ========= */
 
-    .header-card {
-      padding: 70px 16px 80px;
-      margin: 0 auto 50px;
+    .header-hero {
+      width: 100%;
+      padding: 80px 24px 92px;
       text-align: center;
 
       background:
-        linear-gradient(
-          135deg,
-          rgba(255, 255, 255, 0.72),
-          rgba(245, 247, 255, 0.45)
-        ),
-        rgba(255, 255, 255, 0.55);
+        linear-gradient(135deg, rgba(255,255,255,0.78), rgba(245,247,255,0.58));
+      
       backdrop-filter: blur(10px);
       -webkit-backdrop-filter: blur(10px);
 
-      border-radius: 22px;
-      border: 1px solid rgba(0, 0, 0, 0.06);
+      border-bottom: 1px solid rgba(0,0,0,0.06);
 
       animation: fadeUp 0.6s ease-out forwards;
       opacity: 0;
@@ -88,13 +83,12 @@
     }
 
     .title {
-  font-family: "Helvetica", "Helvetica Neue", Arial, sans-serif;
-  font-size: 3rem;
-  font-weight: 800;
-  margin: 0 0 10px;
-  letter-spacing: -0.02em;
-}
-
+      font-family: "Helvetica", "Helvetica Neue", Arial, sans-serif;
+      font-size: 3.2rem;
+      font-weight: 800;
+      margin: 0 0 14px;
+      letter-spacing: -0.02em;
+    }
 
     .role-tag {
       display: inline-block;
@@ -104,45 +98,40 @@
       border-radius: 999px;
       font-size: 1rem;
       font-weight: 600;
-      margin-bottom: 16px;
+      margin-bottom: 20px;
       letter-spacing: 0.03em;
     }
 
     .subtitle {
-      font-size: 1.25rem;
+      font-size: 1.28rem;
       color: var(--muted);
-      margin: 0 0 16px;
+      margin: 0 0 18px;
+      max-width: 780px;
+      margin-left: auto;
+      margin-right: auto;
     }
 
     .meta {
-      font-size: 0.9rem;
+      font-size: 0.92rem;
       color: var(--muted);
       display: flex;
       flex-wrap: wrap;
-      gap: 8px;
+      gap: 10px;
       justify-content: center;
-      margin-bottom: 8px;
+      margin-bottom: 14px;
     }
 
-    .meta span::before {
-      content: "• ";
-    }
+    .meta span::before { content: "• "; }
 
-    a {
-      color: var(--accent);
-      text-decoration: none;
-    }
-
-    a:hover {
-      text-decoration: underline;
-    }
+    a { color: var(--accent); text-decoration: none; }
+    a:hover { text-decoration: underline; }
 
     .pill-row {
-      margin-top: 10px;
       display: flex;
-      flex-wrap: wrap;
       gap: 8px;
+      flex-wrap: wrap;
       justify-content: center;
+      margin-top: 10px;
     }
 
     .pill {
@@ -154,17 +143,19 @@
       color: var(--muted);
     }
 
-    /* ABOUT centrado, separado del resto, sin tarjeta */
+    /* ========= ABOUT ME ========= */
 
     .about-section {
-      padding: 16px 4px 24px;
-      margin: 10px auto 40px;
+      padding: 26px 4px 30px;
+      margin: 20px auto 48px;
       max-width: 850px;
       text-align: center;
-      border-bottom: 1px solid rgba(0, 0, 0, 0.06);
+
+      border-bottom: 1px solid rgba(0,0,0,0.06);
+
       animation: fadeUp 0.6s ease-out forwards;
       opacity: 0;
-      transform: translateY(18px);
+      transform: translateY(20px);
     }
 
     .section-label {
@@ -172,76 +163,43 @@
       text-transform: uppercase;
       letter-spacing: 0.08em;
       color: var(--muted);
-      margin: 0 0 6px;
+      margin-bottom: 6px;
     }
 
     .section-title {
-      font-size: 1.2rem;
-      margin: 0 0 10px;
+      font-size: 1.25rem;
+      margin-bottom: 12px;
     }
 
     .small {
-      font-size: 0.9rem;
+      font-size: 0.92rem;
       color: var(--muted);
+      margin-bottom: 14px;
+      line-height: 1.55;
     }
 
-    /* TARJETAS GENERALES (Skills, Docs, etc.) */
-
-    .module {
-      background: var(--card-bg);
-      border-radius: var(--radius);
-      box-shadow: var(--shadow-soft);
-      padding: 20px 20px 18px;
-      border: 1px solid var(--border);
-      margin-bottom: 20px;
-      opacity: 0;
-      transform: translateY(18px);
-      animation: fadeUp 0.6s ease-out forwards;
-      transition:
-        transform 0.25s ease-out,
-        box-shadow 0.25s ease-out,
-        border-color 0.25s ease-out,
-        background 0.25s ease-out;
-    }
-
-    .module:hover {
-      transform: translateY(-3px);
-      box-shadow: 0 18px 40px rgba(0, 0, 0, 0.10);
-      border-color: #d6e2ff;
-      background: #fcfdff;
-    }
-
-    /* PROJECT GRIDS */
+    /* ========= PROJECTS GRID ========= */
 
     .section-heading {
       font-size: 1.1rem;
-      margin: 24px 0 10px;
+      margin: 30px 0 12px;
       color: var(--muted);
-      text-transform: uppercase;
-      letter-spacing: 0.08em;
       text-align: center;
+      text-transform: uppercase;
       font-weight: 700;
+      letter-spacing: 0.08em;
     }
 
     .project-grid-top {
       display: grid;
-      grid-template-columns: repeat(3, minmax(0, 1fr));
-      gap: 18px;
-      margin-bottom: 26px;
-      overflow: visible;
+      grid-template-columns: repeat(3, minmax(0,1fr));
+      gap: 20px;
+      margin-bottom: 34px;
     }
 
-    .project-grid-more {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-      gap: 18px;
-      margin-bottom: 32px;
-      overflow: visible;
-    }
-
-    @media (max-width: 950px) {
+    @media (max-width: 900px) {
       .project-grid-top {
-        grid-template-columns: repeat(2, minmax(0, 1fr));
+        grid-template-columns: repeat(2, minmax(0,1fr));
       }
     }
 
@@ -251,83 +209,78 @@
       }
     }
 
+    .project-grid-more {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px,1fr));
+      gap: 20px;
+      margin-bottom: 40px;
+    }
+
+    /* ========= PROJECT CARD ========= */
+
     .project-card {
-      position: relative;
-      overflow: hidden;
       background: var(--card-bg);
       border-radius: var(--radius);
       border: 1px solid var(--border);
-      box-shadow: var(--shadow-soft);
       padding: 16px 16px 14px;
+
+      box-shadow: var(--shadow-soft);
+      text-align: center;
+
       cursor: default;
+      overflow: hidden;
+
       opacity: 0;
       transform: translateY(18px);
       animation: fadeUp 0.7s ease-out forwards;
+
       transition:
-        transform 0.75s cubic-bezier(0.25, 0.1, 0.25, 1),
-        box-shadow 0.75s cubic-bezier(0.25, 0.1, 0.25, 1),
-        border-color 0.6s ease,
+        transform 0.75s cubic-bezier(0.25,0.1,0.25,1),
+        box-shadow 0.75s cubic-bezier(0.25,0.1,0.25,1),
         background 0.6s ease,
+        border-color 0.6s ease,
         z-index 0.4s ease;
-      text-align: center;
-      transform-origin: center center;
     }
 
     .project-card:hover {
       transform: translateY(-6px) scale(1.10);
-      box-shadow: 0 30px 70px rgba(0, 0, 0, 0.18);
+      box-shadow: 0 32px 70px rgba(0,0,0,0.18);
+      background: #fff;
       border-color: #c3d4ff;
-      background: #ffffff;
-      z-index: 30;
-      position: relative;
+      z-index: 40;
     }
 
     .project-card h3 {
       margin: 0 0 6px;
       font-size: 1.02rem;
-      text-align: center;
     }
 
     .tagline {
       font-size: 0.84rem;
       color: var(--muted);
-      margin: 0 0 8px;
-      text-align: center;
+      margin-bottom: 8px;
     }
 
     .impact-line {
       font-size: 0.9rem;
-      margin: 0 0 4px;
-      text-align: center;
-    }
-
-    .impact-line strong {
-      font-weight: 600;
+      margin-bottom: 6px;
     }
 
     .project-summary {
       font-size: 0.86rem;
       color: var(--muted);
-      margin: 2px 0 0;
-      text-align: center;
+      margin-bottom: 4px;
     }
 
     .project-details {
       max-height: 0;
-      opacity: 0;
       overflow: hidden;
+      opacity: 0;
+
       transition:
         max-height 0.8s ease,
         opacity 0.6s ease,
         margin-top 0.6s ease;
-      margin-top: 0;
-    }
-
-    .project-details p {
-      font-size: 0.84rem;
-      color: var(--muted);
-      margin: 6px 0 0;
-      text-align: center;
     }
 
     .project-card:hover .project-details {
@@ -336,45 +289,55 @@
       margin-top: 10px;
     }
 
-    .project-card:nth-of-type(1) { animation-delay: 0.12s; }
-    .project-card:nth-of-type(2) { animation-delay: 0.20s; }
-    .project-card:nth-of-type(3) { animation-delay: 0.28s; }
-    .project-card:nth-of-type(4) { animation-delay: 0.36s; }
-    .project-card:nth-of-type(5) { animation-delay: 0.44s; }
-    .project-card:nth-of-type(6) { animation-delay: 0.52s; }
-    .project-card:nth-of-type(7) { animation-delay: 0.60s; }
-    .project-card:nth-of-type(8) { animation-delay: 0.68s; }
-    .project-card:nth-of-type(9) { animation-delay: 0.76s; }
+    .project-details p {
+      font-size: 0.84rem;
+      color: var(--muted);
+      margin: 6px 0;
+    }
 
-    /* BOTTOM GRID FOR SKILLS & CONTACT */
+    /* ========= SKILLS & CONTACT ========= */
 
     .bottom-grid {
       display: grid;
-      grid-template-columns: minmax(0, 1.2fr) minmax(0, 1fr);
-      gap: 18px;
+      grid-template-columns: minmax(0,1.2fr) minmax(0,1fr);
+      gap: 20px;
     }
 
     @media (max-width: 800px) {
-      .bottom-grid {
-        grid-template-columns: 1fr;
-      }
+      .bottom-grid { grid-template-columns: 1fr; }
     }
 
-    .doc-links a {
-      display: inline-block;
-      margin-right: 12px;
-      margin-bottom: 6px;
-      font-size: 0.9rem;
+    .module {
+      background: var(--card-bg);
+      border-radius: var(--radius);
+      border: 1px solid var(--border);
+      padding: 20px;
+      box-shadow: var(--shadow-soft);
+
+      opacity: 0;
+      transform: translateY(18px);
+      animation: fadeUp 0.7s ease-out forwards;
+    }
+
+    .module:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 20px 40px rgba(0,0,0,0.10);
+      border-color: #d6e2ff;
     }
 
     ul.clean {
       padding-left: 18px;
-      margin: 6px 0 4px;
     }
 
-    ul.clean li {
-      margin-bottom: 4px;
+    ul.clean li { margin-bottom: 4px; }
+
+    .doc-links a {
+      display: block;
+      font-size: 0.9rem;
+      margin-bottom: 6px;
     }
+
+    /* ========= ANIMATION ========= */
 
     @keyframes fadeUp {
       to {
@@ -382,278 +345,279 @@
         transform: translateY(0);
       }
     }
+
   </style>
 </head>
+
 <body>
+
+  <!-- ================= HERO FULL-WIDTH HEADER ================= -->
+
+  <header class="header-hero">
+    <h1 class="title">Jean Paul Angulo</h1>
+
+    <span class="role-tag">
+      Project Manager · Operational Excellence · Streaming Operations
+    </span>
+
+    <p class="subtitle">
+      Designing scalable workflows, reducing operational friction, and aligning global teams across streaming ecosystems.
+    </p>
+
+    <div class="meta">
+      <span>Madrid, Spain</span>
+      <span>Bilingual ES/EN</span>
+      <span><a href="mailto:jeanpaulangulo@gmail.com">jeanpaulangulo@gmail.com</a></span>
+      <span><a href="<your-linkedin-url>" target="_blank">LinkedIn</a></span>
+    </div>
+
+    <div class="pill-row">
+      <div class="pill">Process Optimization</div>
+      <div class="pill">Global Workflows</div>
+      <div class="pill">Streaming & Digital Media</div>
+      <div class="pill">Troubleshooting & QA</div>
+      <div class="pill">SOP & Training</div>
+      <div class="pill">AI-Assisted Documentation</div>
+    </div>
+  </header>
+
+  <!-- ================= PAGE CONTENT ================= -->
+
   <main class="page">
-    <!-- HERO HEADER -->
-    <header class="header-card">
-      <h1 class="title">JEAN PAUL ANGULO</h1>
 
-      <!-- ROLE TAG HERO -->
-      <span class="role-tag">
-        Project Manager · Operational Excellence · Streaming Operations
-      </span>
-
-      <p class="subtitle">
-        Designing scalable workflows, reducing operational friction, and aligning global teams across streaming ecosystems.
-      </p>
-
-      <div class="meta">
-        <span>Madrid, Spain</span>
-        <span>Bilingual ES/EN</span>
-        <span><a href="mailto:jeanpaulangulo@gmail.com">jeanpaulangulo@gmail.com</a></span>
-        <span><a href="<your-linkedin-url>" target="_blank" rel="noopener">https://www.linkedin.com/in/jeanpaulangulo/</a></span>
-      </div>
-
-      <div class="pill-row">
-        <div class="pill">Process Optimization</div>
-        <div class="pill">Global Workflows</div>
-        <div class="pill">Streaming & Digital Media</div>
-        <div class="pill">Troubleshooting & QA</div>
-        <div class="pill">SOP & Training</div>
-        <div class="pill">AI-Assisted Documentation</div>
-      </div>
-    </header>
-
-    <!-- ABOUT centrado, data-driven -->
+    <!-- ABOUT ME -->
     <section class="about-section">
+      <p class="section-label">ABOUT</p>
       <h2 class="section-title">About Me</h2>
+
       <p class="small">
         Project Manager and Operations Lead with 10+ years of experience in streaming, digital media and global operations
         (Amazon Prime Video, Disney+, Paramount+, DAZN, Fox Networks, Antena 3). I specialize in
         <strong>designing and scaling workflows</strong>, reducing operational friction, and turning complex, multi-team problems
         into measurable, sustainable solutions.
       </p>
+
       <p class="small">
         Across my career, I've led initiatives that reduced duplicated troubleshooting by <strong>30%</strong>, cut time-to-resolution
         for complex cases by <strong>15%</strong>, enabled <strong>24/7 coverage</strong> with existing headcount, and improved delivery
-        reliability for partners like FIBA, Paramount+ and YouTube Studios. My sweet spot sits between
-        <strong>operations, product, and technology</strong>: aligning teams, standardizing processes, and using data and tools
-        (Jira, Slack workflows, automation, analytics) to drive better decisions and customer outcomes.
+        reliability for partners like FIBA, Paramount+ and YouTube Studios.
+      </p>
+
+      <p class="small">
+        My sweet spot sits between <strong>operations, product, and technology</strong>:
+        aligning teams, standardizing processes, and using data and tools (Jira, Slack workflows, analytics) to drive better
+        customer outcomes.
       </p>
     </section>
 
-    <!-- KEY PROJECTS (TOP 3) -->
+    <!-- KEY PROJECTS -->
     <section>
       <p class="section-heading">KEY PROJECTS (TOP 3)</p>
+
       <div class="project-grid-top">
+
+        <!-- PROJECT 1 -->
         <article class="project-card">
           <h3>Global Audit the Auditor (ATA) Program</h3>
           <p class="tagline">Prime Video · Quality Systems</p>
-          <p class="impact-line">
-            Cut QA blind spots and raised confidence in audit results across regions.
-          </p>
+          <p class="impact-line">Cut QA blind spots and increased audit consistency across sites.</p>
           <p class="project-summary">
-            Designed and rolled out a unified “audit the auditor” system for troubleshooting workflows.
+            Designed and rolled out a unified ATA system for troubleshooting workflows.
           </p>
+
           <div class="project-details">
             <p>
-              Built a global ATA framework covering criteria, sampling, scoring and follow-up actions, aligning multiple regions on a single quality bar.
-              The program reduced inconsistent scoring, increased transparency in audits, and created a repeatable way to spot and fix QA weaknesses early.
+              Built a global ATA model covering criteria, sampling, scoring and follow-up actions,
+              aligning Madrid, Chennai and San José around a single quality standard.
             </p>
           </div>
         </article>
 
+        <!-- PROJECT 2 -->
         <article class="project-card">
           <h3>Global QA Framework – Unified Audit System</h3>
           <p class="tagline">Prime Video · Multi-Site Operations</p>
-          <p class="impact-line">
-            Created one QA system for multi-site troubleshooting teams.
-          </p>
+          <p class="impact-line">Created one QA methodology used across regions.</p>
           <p class="project-summary">
-            Consolidated fragmented QA approaches into a single, scalable audit framework.
+            Consolidated fragmented QA processes into a single scalable audit structure.
           </p>
+
           <div class="project-details">
             <p>
-              Partnered with PMs, SMEs and QA leads to redesign audit forms, error categories and scoring logic,
-              making it possible to compare quality across sites and workflows. This improved trust in metrics and made QA a lever for continuous improvement instead of just a control mechanism.
+              Redesigned audit forms, error categories and scoring logic, enabling consistent performance
+              comparison across workflows and regions.
             </p>
           </div>
         </article>
 
+        <!-- PROJECT 3 -->
         <article class="project-card">
           <h3>Support Excellence & Ticketing Workflow Integration</h3>
-          <p class="tagline">Prime Video · Digiflex Troubleshooting</p>
-          <p class="impact-line">
-            Reduced friction between ticketing streams and stabilized partner experience.
-          </p>
+          <p class="tagline">Prime Video · Troubleshooting & PS</p>
+          <p class="impact-line">Reduced friction between ticket streams and improved partner experience.</p>
           <p class="project-summary">
-            Integrated Digiflex ticketing workflows to avoid duplicated effort and unclear ownership.
+            Integrated Internal Support, Partner Support and Redelivery workflows.
           </p>
+
           <div class="project-details">
             <p>
-              Mapped end-to-end ticket flows across Internal Support, Partner Support and Redelivery, identified hand-off gaps, and redesigned queues and SOPs.
-              The new model clarified responsibilities, reduced back-and-forth on cases, and improved time to resolution without adding headcount.
+              Rebuilt hand-offs, queues and SOPs, reducing duplicated work and improving ticket resolution speed
+              without increasing headcount.
             </p>
           </div>
         </article>
+
       </div>
     </section>
 
     <!-- MORE PROJECTS -->
     <section>
       <p class="section-heading">MORE PROJECTS</p>
+
       <div class="project-grid-more">
+
         <article class="project-card">
           <h3>Global Performance Calibration System</h3>
-          <p class="tagline">Prime Video · People & Performance</p>
-          <p class="impact-line">
-            Brought structure and fairness to SME performance discussions.
-          </p>
-          <p class="project-summary">
-            Helped design and implement a calibration model for troubleshooting performance.
-          </p>
+          <p class="tagline">People & Performance</p>
+          <p class="impact-line">Introduced structured SME calibration criteria.</p>
+          <p class="project-summary">Helped design a global performance model.</p>
+
           <div class="project-details">
             <p>
-              Co-created a framework that balanced quantitative KPIs (SLAs, AHT, volume) with qualitative impact, enabling more consistent recognition of high performers
-              and clearer development signals for the team.
+              Balanced quantitative KPIs and qualitative impact to drive fairer evaluations and clearer growth areas.
             </p>
           </div>
         </article>
 
         <article class="project-card">
-          <h3>TVOD Account Management – Madrid Site</h3>
-          <p class="tagline">Prime Video · Ownership & Tooling</p>
-          <p class="impact-line">
-            Centralized scattered TVOD data into a single operational view.
-          </p>
-          <p class="project-summary">
-            Designed and implemented a management tracker for TVOD accounts and priorities.
-          </p>
+          <h3>TVOD Account Management – Madrid</h3>
+          <p class="tagline">Ownership & Tooling</p>
+          <p class="impact-line">Centralized TVOD partner and workflow visibility.</p>
+          <p class="project-summary">Implemented a tracker for priorities and blockers.</p>
+
           <div class="project-details">
             <p>
-              Created a clear, reusable structure to track account status, priorities, blockers and follow-ups,
-              making it easier for leadership and SMEs to see where attention was needed and to avoid dropped balls.
+              Enabled leadership to identify risks, delays and operational bottlenecks faster.
             </p>
           </div>
         </article>
 
         <article class="project-card">
           <h3>Partner Support: Redelivery Onboard</h3>
-          <p class="tagline">Prime Video · Workflow Integration</p>
-          <p class="impact-line">
-            Enabled cleaner partner-facing communication on redelivery issues.
-          </p>
-          <p class="project-summary">
-            Helped onboard redelivery work into Partner Support with clear rules and visibility.
-          </p>
+          <p class="tagline">Workflow Integration</p>
+          <p class="impact-line">Created unified structures for partner communication.</p>
+          <p class="project-summary">Aligned internal and partner-facing flows.</p>
+
           <div class="project-details">
             <p>
-              Worked on SOPs, communication guidance and case routing so that redelivery-related problems could be handled in a single, partner-facing workflow,
-              reducing confusion for external partners and simplifying internal coordination.
+              Reduced confusion for partners and internal teams by defining clear case-routing expectations.
             </p>
           </div>
         </article>
 
         <article class="project-card">
-          <h3>Error Taxonomy Redesign – Internal Support</h3>
-          <p class="tagline">Prime Video · Data & Insights</p>
-          <p class="impact-line">
-            Improved signal quality for troubleshooting and root cause analysis.
-          </p>
-          <p class="project-summary">
-            Reworked error categories to move away from “other” and vague buckets.
-          </p>
+          <h3>Error Taxonomy Redesign</h3>
+          <p class="tagline">Data Quality</p>
+          <p class="impact-line">Improved reporting and RCA consistency.</p>
+          <p class="project-summary">Reworked vague categories into actionable taxonomy.</p>
+
           <div class="project-details">
             <p>
-              Partnered with PMs and SMEs to design a more granular, meaningful taxonomy for Internal Support issues,
-              unlocking better reporting, trend analysis and more targeted process fixes.
+              Enabled trend analysis and better workflow insights across Internal Support.
             </p>
           </div>
         </article>
 
         <article class="project-card">
-          <h3>ATM: Metadata – Internal Corrections Pilot</h3>
-          <p class="tagline">Prime Video · Pilot & Automation</p>
-          <p class="impact-line">
-            Tested a new way of handling metadata corrections from troubleshooting.
-          </p>
-          <p class="project-summary">
-            Participated in a pilot to route metadata issues more efficiently and with better tracking.
-          </p>
+          <h3>Metadata Corrections Pilot (ATM)</h3>
+          <p class="tagline">Pilot & Automation</p>
+          <p class="impact-line">Streamlined metadata correction routing.</p>
+          <p class="project-summary">Helped define pilot use cases and success metrics.</p>
+
           <div class="project-details">
             <p>
-              Worked on defining use cases, feedback loops and success metrics for the pilot, helping refine how metadata-related tickets were surfaced, corrected and monitored across workflows.
+              Improved correction speed and data accuracy by defining clearer ticket flows.
             </p>
           </div>
         </article>
 
         <article class="project-card">
-          <h3>Optimizing Workload Allocation (ATM)</h3>
-          <p class="tagline">Prime Video · Capacity & Planning</p>
-          <p class="impact-line">
-            Gave structure to how complex troubleshooting work is distributed.
-          </p>
-          <p class="project-summary">
-            Helped rethink how ATM tasks and high-complexity tickets are assigned and tracked.
-          </p>
+          <h3>Workload Allocation Optimization</h3>
+          <p class="tagline">Capacity Planning</p>
+          <p class="impact-line">Balanced high-complexity troubleshooting work.</p>
+          <p class="project-summary">Helped structure ATM assignment logic.</p>
+
           <div class="project-details">
             <p>
-              Contributed to models that balance task complexity, SME expertise and site strategy,
-              ensuring that critical work is handled by the right people while avoiding burnout and blind spots.
+              Reduced burnout risk and ensured critical tasks reached the right SMEs.
             </p>
           </div>
         </article>
 
         <article class="project-card">
           <h3>Exceeding Ticket Resolution KPIs</h3>
-          <p class="tagline">Prime Video · Individual & Team Impact</p>
-          <p class="impact-line">
-            Consistently outperformed resolution and quality targets in troubleshooting.
-          </p>
-          <p class="project-summary">
-            Combined volume, quality and ownership to support broader SME responsibilities.
-          </p>
+          <p class="tagline">Performance & QA</p>
+          <p class="impact-line">Consistently surpassed quality and timing targets.</p>
+          <p class="project-summary">Combined volume + quality + ownership.</p>
+
           <div class="project-details">
             <p>
-              Used data and structured follow-up to keep resolution times, quality scores and customer impact above expectations,
-              while also dedicating time to projects like QA frameworks, training and workflow redesign.
+              Maintained best-in-class metrics while contributing to global improvement initiatives.
             </p>
           </div>
         </article>
 
         <article class="project-card">
-          <h3>Standardizing QA Across Multi-Site Troubleshooting</h3>
-          <p class="tagline">Prime Video · Global Alignment</p>
-          <p class="impact-line">
-            Helped unify quality expectations between regions and workflows.
-          </p>
-          <p class="project-summary">
-            Supported the creation of shared QA guidelines after system and process changes.
-          </p>
+          <h3>Standardizing QA Across Regions</h3>
+          <p class="tagline">Global Alignment</p>
+          <p class="impact-line">Unified expectations across multi-site troubleshooting.</p>
+          <p class="project-summary">Supported the creation of shared QA guidelines.</p>
+
           <div class="project-details">
             <p>
-              Worked with global stakeholders to adapt QA standards after tool and workflow migrations,
-              reducing misalignment between regions and ensuring that metrics still reflected reality.
+              Reduced misalignment between Madrid, Chennai and San José during tool migrations.
             </p>
           </div>
         </article>
+
       </div>
     </section>
 
-    <!-- SKILLS + DOCS & CONTACT -->
+    <!-- SKILLS + CONTACT -->
     <section class="bottom-grid">
+
       <aside class="module">
+        <p class="section-label">PROFILE</p>
         <h3 class="section-title">SKILLS & TOOLS</h3>
+
         <ul class="clean small">
-          <li><strong>Core skills:</strong> Project Management, Operational Excellence, Continuous Improvement, Stakeholder Alignment, Troubleshooting, Workflow Design, SOP Development, Training & Enablement, Data-Informed Decisions.</li>
-          <li><strong>Domains:</strong> Streaming & OTT, Digital Content Operations, Media Supply Chain, QA & Calibration, Launch Operations, Partner Support.</li>
-          <li><strong>Tools:</strong> Excel (Advanced), Airtable, Jira, Salesforce, Asana, Slack Workflow Builder, SharePoint.</li>
+          <li><strong>Core skills:</strong> Project Management, Operational Excellence, Continuous Improvement, Stakeholder Alignment, Troubleshooting, Workflow Design, SOP Development, Training, Root Cause Analysis.</li>
+          <li><strong>Domains:</strong> Streaming & OTT, Digital Content Operations, Media Supply Chain, QA & Calibration, Partner Support, Launch Operations.</li>
+          <li><strong>Tools:</strong> Excel, Airtable, Jira, Salesforce, Slack Workflows, Asana, SharePoint.</li>
         </ul>
       </aside>
 
       <aside class="module">
-        <h3 class="section-title">RESOURCES</h3>
-        <p class="small">Download my CVs and portfolio or get in touch:</p>
+        <p class="section-label">RESOURCES</p>
+        <h3 class="section-title">DOCUMENTS & CONTACT</h3>
+
+        <p class="small">Download my CVs and portfolio:</p>
+        
         <div class="doc-links small">
-          <a href="docs/CV_JeanPaul_Angulo_ProjectManager.pdf" target="_blank" rel="noopener">CV – Project Manager</a><br />
-          <a href="docs/CV_JeanPaul_Angulo_StreamingOps.pdf" target="_blank" rel="noopener">CV – Streaming / Digital Operations</a><br />
-          <a href="docs/CV_JeanPaul_Angulo_ProcessOptimization.pdf" target="_blank" rel="noopener">CV – Process Optimization</a><br />
-          <a href="docs/Portfolio_Projects_JeanPaul_Angulo.pdf" target="_blank" rel="noopener">Project Portfolio – One Pager</a>
+          <a href="docs/CV_JeanPaul_Angulo_ProjectManager.pdf" target="_blank">CV – Project Manager</a>
+          <a href="docs/CV_JeanPaul_Angulo_StreamingOps.pdf" target="_blank">CV – Streaming Ops</a>
+          <a href="docs/CV_JeanPaul_Angulo_ProcessOptimization.pdf" target="_blank">CV – Process Optimization</a>
+          <a href="docs/Portfolio_Projects_JeanPaul_Angulo.pdf" target="_blank">Project Portfolio – One Pager</a>
         </div>
+
+        <ul class="clean small">
+          <li>Email: <a href="mailto:jeanpaulangulo@gmail.com">jeanpaulangulo@gmail.com</a></li>
+          <li>LinkedIn: <a href="<your-linkedin-url>" target="_blank"><your-linkedin-url></a></li>
+        </ul>
       </aside>
+
     </section>
+
   </main>
 </body>
 </html>
