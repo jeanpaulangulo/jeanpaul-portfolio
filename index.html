@@ -121,7 +121,133 @@
       border-color: var(--accent);
       transform: translateY(-1px);
     }
+/* === ANIMATION POLISH OVERRIDES === */
 
+/* Fondo más suave y menos mareante */
+body {
+  animation: bgPulse 26s ease-in-out infinite;
+}
+
+/* Re-definimos el keyframe para que sea aún más sutil */
+@keyframes bgPulse {
+  0% {
+    background:
+      radial-gradient(circle at 20% 20%, rgba(150,170,255,0.10), transparent 60%),
+      radial-gradient(circle at 80% 80%, rgba(100,130,255,0.08), transparent 60%),
+      #f5f7ff;
+  }
+  50% {
+    background:
+      radial-gradient(circle at 22% 22%, rgba(150,170,255,0.15), transparent 63%),
+      radial-gradient(circle at 78% 78%, rgba(100,130,255,0.11), transparent 63%),
+      #f5f7ff;
+  }
+  100% {
+    background:
+      radial-gradient(circle at 20% 20%, rgba(150,170,255,0.10), transparent 60%),
+      radial-gradient(circle at 80% 80%, rgba(100,130,255,0.08), transparent 60%),
+      #f5f7ff;
+  }
+}
+
+/* Pequeño fade-in del hero al cargar la página */
+.header-hero {
+  animation: heroFadeIn 0.85s ease-out;
+}
+
+@keyframes heroFadeIn {
+  0% {
+    opacity: 0;
+    transform: translateY(12px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Scroll indicator: que pueda desaparecer suavemente cuando se hace scroll */
+.scroll-indicator {
+  transition: opacity 0.35s ease-out, transform 0.35s ease-out;
+}
+
+.scroll-indicator--hidden {
+  opacity: 0;
+  transform: translateY(-4px);
+  pointer-events: none;
+}
+
+/* Scroll reveal un poco más rápido y con mejor rendimiento */
+.reveal {
+  opacity: 0;
+  transform: translateY(16px);
+  transition: opacity 0.55s ease-out, transform 0.55s ease-out;
+  will-change: opacity, transform;
+}
+
+.reveal-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Subrayado de headings: entrada más limpia */
+.section-heading::after {
+  transition: transform 0.45s cubic-bezier(0.22, 0.11, 0.25, 1);
+}
+
+/* Hovers de módulos y chips: microinteracción coherente */
+.module:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 18px 36px rgba(0,0,0,0.10);
+  border-color: #d1ddff;
+  background: #fcfdff;
+}
+
+.pill:hover,
+.skill-tag:hover,
+.contact-link:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 24px rgba(0,0,0,0.10);
+}
+
+/* Tarjetas: menos “cartoony”, más elegante y profesional */
+.project-card {
+  transition:
+    transform 0.45s cubic-bezier(0.22, 0.11, 0.25, 1),
+    box-shadow 0.45s cubic-bezier(0.22, 0.11, 0.25, 1),
+    background 0.35s ease,
+    border-color 0.35s ease,
+    z-index 0.3s ease;
+}
+
+/* TOP PROJECT: reducir escala y rotación */
+.top-project:hover {
+  transform: translateY(-8px) scale(1.04) rotateX(1deg) rotateY(-1deg);
+  box-shadow: 0 26px 60px rgba(0,0,0,0.18);
+}
+
+/* Secondary cards: un poquito de lift pero sin exagerar */
+.secondary-project:hover {
+  transform: translateY(-6px) scale(1.03);
+  box-shadow: 0 22px 46px rgba(0,0,0,0.16);
+}
+
+/* Accesibilidad: respetar prefers-reduced-motion */
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition: none !important;
+  }
+}
+
+    
     @media (max-width: 600px) {
       .top-nav {
         gap: 16px;
@@ -1450,27 +1576,51 @@
     © 2025 — Designed &amp; built by Jean Paul Angulo
   </footer>
 
-  <script>
-    // Scroll reveal for elements with .reveal
-    const revealEls = document.querySelectorAll('.reveal');
+<script>
+  // Scroll reveal + stagger suave
+  const revealEls = document.querySelectorAll('.reveal');
 
-    const observer = new IntersectionObserver((entries) => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) {
-          entry.target.classList.add('reveal-visible');
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach((entry) => {
+      if (entry.isIntersecting) {
+        // Añadimos la clase visible
+        entry.target.classList.add('reveal-visible');
 
-          // Añadimos animación del subrayado a los headings de sección
-          const heading = entry.target.querySelector('.section-heading');
-          if (heading) heading.classList.add('heading-visible');
+        // Si dentro hay un heading de sección, activamos el subrayado animado
+        const heading = entry.target.querySelector('.section-heading');
+        if (heading) heading.classList.add('heading-visible');
 
-          observer.unobserve(entry.target);
-        }
-      });
-    }, {
-      threshold: 0.15
+        // No necesitamos observar más ese elemento
+        observer.unobserve(entry.target);
+      }
     });
+  }, {
+    threshold: 0.2
+  });
 
-    revealEls.forEach(el => observer.observe(el));
-  </script>
+  // Pequeño stagger basado en el índice de cada .reveal
+  revealEls.forEach((el, index) => {
+    const baseDelay = 80; // ms
+    el.style.transitionDelay = `${index * baseDelay}ms`;
+    observer.observe(el);
+  });
+
+  // Scroll indicator: se desvanece cuando el usuario empieza a bajar
+  const scrollIndicator = document.querySelector('.scroll-indicator');
+
+  const handleScrollIndicator = () => {
+    if (!scrollIndicator) return;
+    const hideOffset = 120; // px de scroll antes de ocultarlo
+    if (window.scrollY > hideOffset) {
+      scrollIndicator.classList.add('scroll-indicator--hidden');
+    } else {
+      scrollIndicator.classList.remove('scroll-indicator--hidden');
+    }
+  };
+
+  window.addEventListener('scroll', handleScrollIndicator);
+  // Llamada inicial por si el usuario entra ya scrolleado
+  handleScrollIndicator();
+</script>
 </body>
 </html>
