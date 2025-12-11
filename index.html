@@ -771,6 +771,33 @@
       -webkit-backdrop-filter: blur(8px);
     }
 
+    /* CENTER SECTION HEADINGS + UNDERLINE */
+.section-heading {
+  font-family: "Helvetica", "Helvetica Neue", Arial, sans-serif;
+  text-transform: uppercase;
+  letter-spacing: 0.10em;
+  font-weight: 700;
+  font-size: 1rem;
+  color: var(--muted);
+  text-align: center;        /* CENTRA EL TEXTO */
+  margin-bottom: 20px;
+  position: relative;
+  display: inline-block;     /* Para centrar el subrayado */
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+/* UNDERLINE EFFECT */
+.section-heading::after {
+  content: "";
+  display: block;
+  width: 60%;                /* Ajusta grosor del subrayado */
+  height: 2px;
+  background: linear-gradient(90deg, #b8c3ff, #8fa1ff);
+  margin: 6px auto 0;        /* Centra el subrayado */
+  border-radius: 2px;
+}
+
     /* RESPONSIVE */
 
     @media (max-width: 768px) {
