@@ -232,6 +232,55 @@ body {
   box-shadow: 0 22px 46px rgba(0,0,0,0.16);
 }
 
+/* === HERO CON FOTO === */
+
+.hero-inner {
+  max-width: 980px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  gap: 36px;
+}
+
+/* Mantiene el espíritu minimal, sin robar protagonismo al texto */
+.hero-avatar {
+  flex-shrink: 0;
+}
+
+.hero-avatar img {
+  width: 140px;
+  height: 140px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 2px solid #dde1ff;
+  box-shadow: 0 12px 28px rgba(0, 0, 0, 0.10);
+}
+
+/* El texto se alinea a la izquierda en desktop, pero mantiene el estilo */
+.hero-copy {
+  text-align: left;
+}
+
+/* Ajustes responsivos */
+@media (max-width: 768px) {
+  .hero-inner {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  .hero-copy {
+    text-align: center;
+  }
+
+  .hero-avatar img {
+    width: 120px;
+    height: 120px;
+    box-shadow: 0 10px 22px rgba(0, 0, 0, 0.10);
+  }
+}
+
+    
 /* Accesibilidad: respetar prefers-reduced-motion */
 @media (prefers-reduced-motion: reduce) {
   html {
@@ -1047,50 +1096,59 @@ body {
     <a href="#contact">LET’S WORK TOGETHER</a>
   </nav>
 
-  <header class="header-hero">
-    <h1 class="title">JEAN PAUL ANGULO</h1>
-
-    <span class="role-tag">
-      PROJECT MANAGER · OPERATIONAL EXCELLENCE · STREAMING OPERATIONS
-    </span>
-
-    <p class="subtitle">
-      Project &amp; operations lead focused on building scalable workflows, reducing operational friction,
-      and aligning global teams so streaming platforms ship reliably at scale.
-    </p>
-
-    <div class="meta">
-      <span>Madrid, Spain</span>
-      <span>Bilingual ES/EN</span>
-      <span><a href="mailto:jeanpaulangulo@gmail.com">jeanpaulangulo@gmail.com</a></span>
-      <span><a href="https://www.linkedin.com/in/jeanpaulangulo/" target="_blank">LinkedIn</a></span>
-      <span><a href="docs/Portfolio_Projects_JeanPaul_Angulo.pdf" target="_blank">Portfolio (one-pager)</a></span>
-      <span><a href="docs/CV_JeanPaul_Angulo_ProjectManager.pdf" target="_blank">CV (PDF)</a></span>
+<header class="header-hero">
+  <div class="hero-inner">
+    <!-- AVATAR -->
+    <div class="hero-avatar">
+      <!-- Cambia la ruta por la tuya, por ejemplo: img/profile.jpg -->
+      <img src="img/profile.jpg" alt="Jean Paul Angulo – Profile photo" />
     </div>
 
-    <div class="pill-row">
-      <!-- Keywords originales -->
-      <div class="pill">Process Optimization</div>
-      <div class="pill">Global Workflows</div>
-      <div class="pill">Streaming &amp; Digital Media</div>
-      <div class="pill">Troubleshooting &amp; QA</div>
-      <div class="pill">SOP &amp; Training</div>
-      <div class="pill">AI-Assisted Documentation</div>
+    <!-- TEXTO -->
+    <div class="hero-copy">
+      <h1 class="title">JEAN PAUL ANGULO</h1>
 
-      <!-- Strengths integradas -->
-      <div class="pill">Global Workflow Architect</div>
-      <div class="pill">Troubleshooting Systems Expert</div>
-      <div class="pill">Cross-Regional Operations Lead</div>
-      <div class="pill">QA &amp; Calibration Specialist</div>
-      <div class="pill">Scalable SOP &amp; Training Builder</div>
+      <span class="role-tag">
+        PROJECT MANAGER · OPERATIONAL EXCELLENCE · STREAMING OPERATIONS
+      </span>
+
+      <p class="subtitle">
+        Project &amp; operations lead focused on building scalable workflows, reducing operational friction,
+        and aligning global teams so streaming platforms ship reliably at scale.
+      </p>
+
+      <div class="meta">
+        <span>Madrid, Spain</span>
+        <span>Bilingual ES/EN</span>
+        <span><a href="mailto:jeanpaulangulo@gmail.com">jeanpaulangulo@gmail.com</a></span>
+        <span><a href="https://www.linkedin.com/in/jeanpaulangulo/" target="_blank">LinkedIn</a></span>
+        <span><a href="docs/Portfolio_Projects_JeanPaul_Angulo.pdf" target="_blank">Portfolio (one-pager)</a></span>
+        <span><a href="docs/CV_JeanPaul_Angulo_ProjectManager.pdf" target="_blank">CV (PDF)</a></span>
+      </div>
+
+      <div class="pill-row">
+        <div class="pill">Process Optimization</div>
+        <div class="pill">Global Workflows</div>
+        <div class="pill">Streaming &amp; Digital Media</div>
+        <div class="pill">Troubleshooting &amp; QA</div>
+        <div class="pill">SOP &amp; Training</div>
+        <div class="pill">AI-Assisted Documentation</div>
+
+        <div class="pill">Global Workflow Architect</div>
+        <div class="pill">Troubleshooting Systems Expert</div>
+        <div class="pill">Cross-Regional Operations Lead</div>
+        <div class="pill">QA &amp; Calibration Specialist</div>
+        <div class="pill">Scalable SOP &amp; Training Builder</div>
+      </div>
+
+      <div class="scroll-indicator">
+        <span>SCROLL TO PROJECTS</span>
+        <div class="scroll-indicator-arrow">⋁</div>
+      </div>
     </div>
+  </div>
+</header>
 
-
-    <div class="scroll-indicator">
-      <span>SCROLL TO PROJECTS</span>
-      <div class="scroll-indicator-arrow">⋁</div>
-    </div>
-  </header>
 
   <main class="page">
 
