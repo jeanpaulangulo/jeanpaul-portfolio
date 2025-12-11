@@ -121,6 +121,27 @@
       border-color: var(--accent);
       transform: translateY(-1px);
     }
+
+/* === HERO CON FOTO === */
+
+.hero-avatar img {
+  width: 190px;      /* más grande en desktop */
+  height: 190px;
+  border-radius: 50%;
+  object-fit: cover;
+
+  /* Sin marco, sin anillo, sin sombra fuerte */
+  border: none;
+  box-shadow: none;
+
+  transition: transform 0.30s ease;
+}
+
+.hero-avatar img:hover {
+  transform: scale(1.03);   /* efecto muy sutil al pasar el ratón */
+}
+
+
 /* === ANIMATION POLISH OVERRIDES === */
 
 /* Fondo más suave y menos mareante */
@@ -166,137 +187,6 @@ body {
     opacity: 1;
     transform: translateY(0);
   }
-}
-
-/* FOTO EN EL HERO, CENTRADA */
-.hero-avatar {
-  display: flex;
-  justify-content: center;
-  margin-bottom: 18px;
-}
-
-.hero-avatar img {
-  width: 132px;
-  height: 132px;
-  border-radius: 50%;
-  object-fit: cover;
-  border: 2px solid #dde1ff;
-  box-shadow: 0 12px 28px rgba(0, 0, 0, 0.10);
-}
-
-/* Opcional: un pelín más pequeño en móviles */
-@media (max-width: 480px) {
-  .hero-avatar img {
-    width: 112px;
-    height: 112px;
-    box-shadow: 0 10px 22px rgba(0, 0, 0, 0.10);
-  }
-}
-
-/* === AVATAR CON LIQUID GLASS RING — VERSIÓN MÁS GRANDE === */
-
-.hero-avatar {
-  display: flex;
-  justify-content: center;
-  margin-bottom: 20px;
-  position: relative;
-}
-
-/* Glass ring (más grande) */
-.hero-avatar::before {
-  content: "";
-  position: absolute;
-  width: 190px;   /* antes 170 */
-  height: 190px;  /* antes 170 */
-  border-radius: 50%;
-  padding: 4px;
-  background: linear-gradient(
-    130deg,
-    rgba(255, 255, 255, 0.75),
-    rgba(195, 203, 255, 0.85),
-    rgba(255, 255, 255, 0.75)
-  );
-  box-shadow:
-    0 22px 48px rgba(15, 23, 42, 0.22),
-    0 0 0 1px rgba(255, 255, 255, 0.35);
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  opacity: 0.96;
-  z-index: 0;
-  background-size: 200% 200%;
-  animation: liquidGlass 18s ease-in-out infinite;
-}
-
-/* Glow interior (ajustado a la nueva escala) */
-.hero-avatar::after {
-  content: "";
-  position: absolute;
-  width: 165px;   /* antes 140 */
-  height: 165px;  /* antes 140 */
-  border-radius: 50%;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  background: radial-gradient(
-    circle,
-    rgba(150, 170, 255, 0.35) 0%,
-    rgba(150, 170, 255, 0.12) 50%,
-    transparent 75%
-  );
-  filter: blur(14px);
-  opacity: 0.85;
-  z-index: 0;
-}
-
-/* Imagen principal (más grande) */
-.hero-avatar img {transition: transform 0.35s ease, box-shadow 0.35s ease;
-}
-
-/* Hover zoom (se mantiene proporcional) */
-.hero-avatar:hover img {
-  transform: scale(1.07);
-  box-shadow:
-    0 20px 50px rgba(15, 23, 42, 0.35),
-    0 0 0 1px rgba(210, 220, 255, 1);
-}
-
-/* Móviles: también un poco más grande, pero controlado */
-@media (max-width: 480px) {
-  .hero-avatar::before {
-    width: 165px;
-    height: 165px;
-  }
-
-  .hero-avatar::after {
-    width: 140px;
-    height: 140px;
-  }
-
-  .hero-avatar img {
-    width: 130px;
-    height: 130px;
-  }
-}
-
-/* Respeto a prefers-reduced-motion: sin animación si el usuario lo pide */
-@media (prefers-reduced-motion: reduce) {
-  .hero-avatar::before {
-    animation: none;
-  }
-}
-
-
-  .hero-avatar::after {
-    width: 140px;
-    height: 140px;
-    filter: blur(14px);
-  }
-}
-    
-/* Scroll indicator: que pueda desaparecer suavemente cuando se hace scroll */
-.scroll-indicator {
-  transition: opacity 0.35s ease-out, transform 0.35s ease-out;
 }
 
 .scroll-indicator--hidden {
@@ -382,6 +272,23 @@ body {
   object-fit: cover;
   border: 2px solid #dde1ff;
   box-shadow: 0 12px 28px rgba(0, 0, 0, 0.10);
+}
+@media (max-width: 768px) {
+  .hero-inner {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  .hero-copy {
+    text-align: center;
+  }
+
+    .hero-avatar img {
+    width: 150px;    /* más grande que antes en móvil */
+    height: 150px;
+    box-shadow: none;
+  }
 }
 
 /* El texto se alinea a la izquierda en desktop, pero mantiene el estilo */
