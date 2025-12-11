@@ -24,6 +24,7 @@
       --border: #e5e5e5;
       --radius: 16px;
       --shadow-soft: 0 10px 30px rgba(0, 0, 0, 0.06);
+      --heading-underline: #c3cbff;
     }
 
     * { box-sizing: border-box; }
@@ -141,9 +142,6 @@
       backdrop-filter: blur(10px);
       -webkit-backdrop-filter: blur(10px);
       border-bottom: 1px solid rgba(0,0,0,0.06);
-      animation: fadeUp 0.6s ease-out forwards;
-      opacity: 0;
-      transform: translateY(16px);
     }
 
     .title {
@@ -250,6 +248,51 @@
       50% { transform: translateY(4px); }
     }
 
+    /* STRENGTHS SECTION */
+
+    .strengths-section {
+      margin: 22px auto 10px;
+      max-width: 960px;
+    }
+
+    .strengths-module {
+      text-align: center;
+    }
+
+    .strengths-heading {
+      font-family: "Helvetica", "Helvetica Neue", Arial, sans-serif;
+      text-transform: uppercase;
+      letter-spacing: 0.14em;
+      font-size: 0.82rem;
+      color: var(--muted);
+      margin: 0 0 12px;
+    }
+
+    .strengths-pills {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 10px;
+    }
+
+    .strength-pill {
+      font-size: 0.8rem;
+      padding: 6px 14px;
+      border-radius: 999px;
+      background: #f3f4ff;
+      border: 1px solid #dde1ff;
+      color: #323a6d;
+      box-shadow: 0 8px 20px rgba(0,0,0,0.04);
+      transition: transform 0.25s ease, box-shadow 0.25s ease, background 0.25s ease;
+      white-space: nowrap;
+    }
+
+    .strength-pill:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 14px 30px rgba(0,0,0,0.10);
+      background: #ffffff;
+    }
+
     /* ABOUT */
 
     .about-section {
@@ -257,9 +300,6 @@
       margin: 20px auto 32px;
       max-width: 850px;
       text-align: center;
-      animation: fadeUp 0.6s ease-out forwards;
-      opacity: 0;
-      transform: translateY(20px);
     }
 
     .small {
@@ -282,6 +322,39 @@
       color: var(--muted);
       text-align: center;
       font-weight: 700;
+      position: relative;
+      display: inline-block;
+    }
+
+    .section-heading::after {
+      content: "";
+      position: absolute;
+      left: 50%;
+      bottom: -6px;
+      width: 72px;
+      height: 2px;
+      background: var(--heading-underline);
+      border-radius: 999px;
+      transform: translateX(-50%) scaleX(0);
+      transform-origin: center;
+      transition: transform 0.45s ease-out;
+    }
+
+    .section-heading.heading-visible::after {
+      transform: translateX(-50%) scaleX(1);
+    }
+
+    /* SCROLL REVEAL */
+
+    .reveal {
+      opacity: 0;
+      transform: translateY(18px);
+      transition: opacity 0.65s ease-out, transform 0.65s ease-out;
+    }
+
+    .reveal-visible {
+      opacity: 1;
+      transform: translateY(0);
     }
 
     /* PROJECT GRIDS */
@@ -325,22 +398,12 @@
       text-align: center;
       cursor: default;
       overflow: hidden;
-      opacity: 0;
-      transform: translateY(30px) scale(0.98);
-      animation: card-in 0.8s ease forwards;
       transition:
         transform 0.9s cubic-bezier(0.22, 0.11, 0.25, 1),
         box-shadow 0.9s cubic-bezier(0.22, 0.11, 0.25, 1),
         background 0.7s ease,
         border-color 0.7s ease,
         z-index 0.4s ease;
-    }
-
-    @keyframes card-in {
-      to {
-        opacity: 1;
-        transform: translateY(0) scale(1);
-      }
     }
 
     .project-card::before {
@@ -380,10 +443,18 @@
     .project-category-label {
       font-family: "Helvetica", "Helvetica Neue", Arial, sans-serif;
       font-size: 0.68rem;
-      letter-spacing: 0.16em;
+      letter-spacing: 0.12em;
       text-transform: uppercase;
       color: #8a8fb3;
       margin: 4px 0 6px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 4px;
+    }
+
+    .cat-icon {
+      font-size: 0.9rem;
     }
 
     .top-badge {
@@ -430,6 +501,37 @@
       color: var(--muted);
     }
 
+    /* TOOLTIP FOR METRICS */
+
+    .impact-metrics[data-tooltip] {
+      position: relative;
+      cursor: help;
+    }
+
+    .impact-metrics[data-tooltip]::after {
+      content: attr(data-tooltip);
+      position: absolute;
+      left: 50%;
+      bottom: 125%;
+      transform: translateX(-50%);
+      background: #111827;
+      color: #f9fafb;
+      padding: 6px 8px;
+      border-radius: 6px;
+      font-size: 0.7rem;
+      opacity: 0;
+      pointer-events: none;
+      white-space: nowrap;
+      box-shadow: 0 8px 18px rgba(0,0,0,0.25);
+      transition: opacity 0.18s ease-out, transform 0.18s ease-out;
+      z-index: 50;
+    }
+
+    .impact-metrics[data-tooltip]:hover::after {
+      opacity: 1;
+      transform: translateX(-50%) translateY(-2px);
+    }
+
     .project-summary {
       font-size: 0.86rem;
       color: var(--muted);
@@ -464,6 +566,21 @@
       transform-style: preserve-3d;
     }
 
+    .top-project::after {
+      content: "";
+      position: absolute;
+      inset: -30%;
+      background: radial-gradient(circle at 50% 0%, rgba(120,160,255,0.22), transparent 60%);
+      mix-blend-mode: screen;
+      opacity: 0;
+      transition: opacity 0.6s ease-out;
+      pointer-events: none;
+    }
+
+    .top-project:hover::after {
+      opacity: 1;
+    }
+
     .top-project:hover {
       transform: translateY(-6px) scale(1.10) rotateX(2deg) rotateY(-2deg);
       box-shadow: 0 32px 70px rgba(0,0,0,0.18);
@@ -492,9 +609,6 @@
       border: 1px solid var(--border);
       padding: 20px;
       box-shadow: var(--shadow-soft);
-      opacity: 0;
-      transform: translateY(18px);
-      animation: fadeUp 0.7s ease-out forwards;
       transition:
         transform 0.25s ease-out,
         box-shadow 0.25s ease-out,
@@ -644,13 +758,17 @@
       background: #ffffff;
     }
 
-    /* ANIMATIONS */
+    /* FOOTER */
 
-    @keyframes fadeUp {
-      to {
-        opacity: 1;
-        transform: translateY(0);
-      }
+    .footer {
+      padding: 18px 16px 22px;
+      text-align: center;
+      font-size: 0.8rem;
+      color: var(--muted);
+      border-top: 1px solid rgba(0,0,0,0.04);
+      background: rgba(255,255,255,0.75);
+      backdrop-filter: blur(8px);
+      -webkit-backdrop-filter: blur(8px);
     }
 
     /* RESPONSIVE */
@@ -750,7 +868,7 @@
       }
       .project-category-label {
         font-size: 0.62rem;
-        letter-spacing: 0.14em;
+        letter-spacing: 0.12em;
       }
       .project-card h3 {
         font-size: 0.85rem;
@@ -774,6 +892,80 @@
       .contact-link {
         font-size: 0.84rem;
         padding: 7px 14px;
+      }
+    }
+
+    /* DARK MODE */
+
+    @media (prefers-color-scheme: dark) {
+      :root {
+        --bg: #020617;
+        --card-bg: #020617;
+        --text: #e5e7eb;
+        --muted: #9ca3af;
+        --border: #1f2937;
+        --heading-underline: #4f46e5;
+      }
+
+      body {
+        background:
+          radial-gradient(circle at 20% 10%, rgba(56,189,248,0.10), transparent 55%),
+          radial-gradient(circle at 80% 80%, rgba(129,140,248,0.12), transparent 60%),
+          #020617;
+      }
+
+      .top-nav {
+        background: rgba(15,23,42,0.9);
+        border-bottom-color: rgba(15,23,42,0.9);
+      }
+
+      .header-hero {
+        background: linear-gradient(135deg, rgba(15,23,42,0.96), rgba(15,23,42,0.94));
+        border-bottom-color: #020617;
+      }
+
+      .module {
+        background: rgba(15,23,42,0.98);
+        border-color: #1f2937;
+      }
+
+      .project-card {
+        background: rgba(15,23,42,0.98);
+      }
+
+      .top-project {
+        background: radial-gradient(circle at 0 0, rgba(56,189,248,0.16), transparent 55%), #020617;
+        border-color: #1f2937;
+      }
+
+      .secondary-project {
+        border-color: #1f2937;
+      }
+
+      .skills-module::before {
+        background: linear-gradient(90deg, #38bdf8, #6366f1);
+      }
+
+      .pill {
+        background: rgba(15,23,42,0.98);
+        border-color: #1f2937;
+      }
+
+      .strength-pill {
+        background: rgba(15,23,42,0.98);
+        border-color: #1f2937;
+        color: #e5e7eb;
+      }
+
+      .skill-tag {
+        background: rgba(15,23,42,0.98);
+        border-color: #1f2937;
+        color: #e5e7eb;
+      }
+
+      .footer {
+        background: rgba(15,23,42,0.96);
+        border-top-color: #020617;
       }
     }
   </style>
@@ -825,8 +1017,22 @@
   </header>
 
   <main class="page">
+    <!-- STRENGTHS -->
+    <section class="strengths-section">
+      <aside class="module strengths-module reveal">
+        <p class="strengths-heading">STRENGTHS AT A GLANCE</p>
+        <div class="strengths-pills">
+          <span class="strength-pill">Global workflow architect</span>
+          <span class="strength-pill">Troubleshooting systems expert</span>
+          <span class="strength-pill">Cross-regional operations lead</span>
+          <span class="strength-pill">QA &amp; calibration specialist</span>
+          <span class="strength-pill">Scalable SOP &amp; training builder</span>
+        </div>
+      </aside>
+    </section>
+
     <!-- ABOUT -->
-    <section id="about" class="about-section">
+    <section id="about" class="about-section reveal">
       <p class="section-heading">ABOUT ME</p>
       <p class="small">
         Project Manager and Operations Lead with 10+ years of experience in streaming, digital media and global operations
@@ -850,20 +1056,23 @@
 
     <!-- KEY PROJECTS (TOP 3) -->
     <section id="key-projects" class="projects-section">
-      <aside class="module projects-module">
+      <aside class="module projects-module reveal">
         <div class="projects-module-inner">
           <p class="section-heading">KEY PROJECTS (TOP 3)</p>
 
           <div class="project-grid-top">
             <!-- 1. Global Troubleshooting Framework & SME Role Redesign -->
-            <article class="project-card top-project cat-ops">
-              <p class="project-category-label">GLOBAL OPERATIONS &amp; PROCESS IMPROVEMENT</p>
+            <article class="project-card top-project cat-ops reveal">
+              <p class="project-category-label">
+                <span class="cat-icon">🌐</span>
+                GLOBAL OPERATIONS &amp; PROCESS IMPROVEMENT
+              </p>
               <span class="top-badge">TOP PROJECT</span>
               <h3>GLOBAL TROUBLESHOOTING FRAMEWORK &amp; SME ROLE REDESIGN</h3>
               <p class="tagline">Global · Redelivery, Partner Support &amp; Internal Support</p>
               <p class="impact-line">
                 <span class="impact-label">🎯 Impact</span>
-                <span class="impact-metrics">
+                <span class="impact-metrics" data-tooltip="Unified approach to troubleshooting and SME work across Tokyo, Madrid, Costa Rica and San José.">
                   Unified 3 troubleshooting workflows under one SME framework and delivered 8 structural improvements across Tokyo, Madrid, Costa Rica and San José.
                 </span>
               </p>
@@ -878,14 +1087,17 @@
             </article>
 
             <!-- 2. Global SME Alignment Program — Cross-Regional Troubleshooting Governance -->
-            <article class="project-card top-project cat-people">
-              <p class="project-category-label">CROSS-REGIONAL COLLABORATION</p>
+            <article class="project-card top-project cat-people reveal">
+              <p class="project-category-label">
+                <span class="cat-icon">👥</span>
+                CROSS-REGIONAL COLLABORATION
+              </p>
               <span class="top-badge">TOP PROJECT</span>
               <h3>GLOBAL SME ALIGNMENT PROGRAM — TROUBLESHOOTING GOVERNANCE</h3>
               <p class="tagline">Global · Monthly SME Governance Cadence</p>
               <p class="impact-line">
                 <span class="impact-label">🎯 Impact</span>
-                <span class="impact-metrics">
+                <span class="impact-metrics" data-tooltip="Recurring global forum where SMEs align on standards, cases and changes.">
                   Reduced duplicated work by 30%, with 5 Madrid-built solutions adopted globally and 15% faster resolution on complex cases.
                 </span>
               </p>
@@ -900,14 +1112,17 @@
             </article>
 
             <!-- 3. Metadata Accuracy & Backlog Reduction Initiative -->
-            <article class="project-card top-project cat-data">
-              <p class="project-category-label">DATA MANAGEMENT &amp; QUALITY</p>
+            <article class="project-card top-project cat-data reveal">
+              <p class="project-category-label">
+                <span class="cat-icon">📊</span>
+                DATA MANAGEMENT &amp; QUALITY
+              </p>
               <span class="top-badge">TOP PROJECT</span>
               <h3>METADATA ACCURACY &amp; BACKLOG REDUCTION INITIATIVE</h3>
               <p class="tagline">Multi-Site Pilot · Internal Support Metadata</p>
               <p class="impact-line">
                 <span class="impact-label">🎯 Impact</span>
-                <span class="impact-metrics">
+                <span class="impact-metrics" data-tooltip="Pilot to stabilise metadata, reduce backlog, and tighten validation and SLAs.">
                   Projected &gt;80% reduction in inactive metadata tickets, 95% validation accuracy and &lt;15 minute processing times.
                 </span>
               </p>
@@ -928,13 +1143,16 @@
     <div class="section-divider"></div>
 
     <!-- MORE PROJECTS -->
-    <section id="more-projects">
+    <section id="more-projects" class="reveal">
       <p class="section-heading">MORE PROJECTS</p>
 
       <div class="project-grid-more">
         <!-- 4. Error Taxonomy Redesign for Data-Driven Troubleshooting -->
-        <article class="project-card secondary-project cat-data">
-          <p class="project-category-label">DATA &amp; ANALYTICS</p>
+        <article class="project-card secondary-project cat-data reveal">
+          <p class="project-category-label">
+            <span class="cat-icon">📊</span>
+            DATA &amp; ANALYTICS
+          </p>
           <h3>ERROR TAXONOMY REDESIGN FOR DATA-DRIVEN TROUBLESHOOTING</h3>
           <p class="tagline">All Troubleshooting Workflows</p>
           <p class="impact-line">
@@ -954,8 +1172,11 @@
         </article>
 
         <!-- 5. Unified Quality Assurance Standards after System Migration -->
-        <article class="project-card secondary-project cat-quality">
-          <p class="project-category-label">QUALITY ASSURANCE</p>
+        <article class="project-card secondary-project cat-quality reveal">
+          <p class="project-category-label">
+            <span class="cat-icon">⭐</span>
+            QUALITY ASSURANCE
+          </p>
           <h3>UNIFIED QUALITY ASSURANCE STANDARDS AFTER SYSTEM MIGRATION</h3>
           <p class="tagline">Global · Post-Migration QA Alignment</p>
           <p class="impact-line">
@@ -975,8 +1196,11 @@
         </article>
 
         <!-- 6. Trust & Safety Ticketing Workflow Rebuild -->
-        <article class="project-card secondary-project cat-workflow">
-          <p class="project-category-label">PROCESS OPTIMIZATION &amp; GOVERNANCE</p>
+        <article class="project-card secondary-project cat-workflow reveal">
+          <p class="project-category-label">
+            <span class="cat-icon">🛡</span>
+            PROCESS OPTIMIZATION &amp; GOVERNANCE
+          </p>
           <h3>TRUST &amp; SAFETY TICKETING WORKFLOW REBUILD</h3>
           <p class="tagline">Trust &amp; Safety · Unmanaged Content Flow</p>
           <p class="impact-line">
@@ -996,8 +1220,11 @@
         </article>
 
         <!-- 7. TVOD Global Account Management Tracker -->
-        <article class="project-card secondary-project cat-ops">
-          <p class="project-category-label">OPERATIONAL ENABLEMENT &amp; TOOLS</p>
+        <article class="project-card secondary-project cat-ops reveal">
+          <p class="project-category-label">
+            <span class="cat-icon">🧭</span>
+            OPERATIONAL ENABLEMENT &amp; TOOLS
+          </p>
           <h3>TVOD GLOBAL ACCOUNT MANAGEMENT TRACKER</h3>
           <p class="tagline">TVOD · Global Spoofing Autonomy</p>
           <p class="impact-line">
@@ -1017,8 +1244,11 @@
         </article>
 
         <!-- 8. Partner Support Redelivery Integration -->
-        <article class="project-card secondary-project cat-partner">
-          <p class="project-category-label">WORKFLOW MIGRATION &amp; TRAINING</p>
+        <article class="project-card secondary-project cat-partner reveal">
+          <p class="project-category-label">
+            <span class="cat-icon">🤝</span>
+            WORKFLOW MIGRATION &amp; TRAINING
+          </p>
           <h3>PARTNER SUPPORT REDELIVERY INTEGRATION</h3>
           <p class="tagline">Partner Support · Redelivery Workflow</p>
           <p class="impact-line">
@@ -1038,8 +1268,11 @@
         </article>
 
         <!-- 9. QA Calibration Refresh — Aligning Troubleshooting Quality Standards -->
-        <article class="project-card secondary-project cat-quality">
-          <p class="project-category-label">QUALITY ASSURANCE &amp; CONTINUOUS IMPROVEMENT</p>
+        <article class="project-card secondary-project cat-quality reveal">
+          <p class="project-category-label">
+            <span class="cat-icon">⭐</span>
+            QUALITY ASSURANCE &amp; CONTINUOUS IMPROVEMENT
+          </p>
           <h3>QA CALIBRATION REFRESH — ALIGNING TROUBLESHOOTING QUALITY STANDARDS</h3>
           <p class="tagline">Global Troubleshooting · Calibration Framework</p>
           <p class="impact-line">
@@ -1059,8 +1292,11 @@
         </article>
 
         <!-- 10. Multi-Workflow Troubleshooting SME Ownership -->
-        <article class="project-card secondary-project cat-people">
-          <p class="project-category-label">SUBJECT MATTER EXPERTISE &amp; LEADERSHIP</p>
+        <article class="project-card secondary-project cat-people reveal">
+          <p class="project-category-label">
+            <span class="cat-icon">👤</span>
+            SUBJECT MATTER EXPERTISE &amp; LEADERSHIP
+          </p>
           <h3>MULTI-WORKFLOW TROUBLESHOOTING SME OWNERSHIP</h3>
           <p class="tagline">Ticketing · Partner Support · Redelivery</p>
           <p class="impact-line">
@@ -1080,8 +1316,11 @@
         </article>
 
         <!-- 11. Kamino 2.0 Practical Troubleshooting Guide -->
-        <article class="project-card secondary-project cat-ops">
-          <p class="project-category-label">TOOL ENABLEMENT &amp; DOCUMENTATION</p>
+        <article class="project-card secondary-project cat-ops reveal">
+          <p class="project-category-label">
+            <span class="cat-icon">🛠</span>
+            TOOL ENABLEMENT &amp; DOCUMENTATION
+          </p>
           <h3>KAMINO 2.0 PRACTICAL TROUBLESHOOTING GUIDE</h3>
           <p class="tagline">Tooling · Practical Enablement</p>
           <p class="impact-line">
@@ -1101,8 +1340,11 @@
         </article>
 
         <!-- 12. Amazon Kids Content Workflow Standardisation -->
-        <article class="project-card secondary-project cat-workflow">
-          <p class="project-category-label">TICKET ROUTING &amp; POLICY CLARIFICATION</p>
+        <article class="project-card secondary-project cat-workflow reveal">
+          <p class="project-category-label">
+            <span class="cat-icon">🎯</span>
+            TICKET ROUTING &amp; POLICY CLARIFICATION
+          </p>
           <h3>AMAZON KIDS CONTENT WORKFLOW STANDARDISATION</h3>
           <p class="tagline">Amazon Kids · Routing &amp; Policy</p>
           <p class="impact-line">
@@ -1122,8 +1364,11 @@
         </article>
 
         <!-- 13. Optimising Workload Allocation for Troubleshooting Tasks -->
-        <article class="project-card secondary-project cat-ops">
-          <p class="project-category-label">STRATEGIC RESOURCE PLANNING</p>
+        <article class="project-card secondary-project cat-ops reveal">
+          <p class="project-category-label">
+            <span class="cat-icon">📌</span>
+            STRATEGIC RESOURCE PLANNING
+          </p>
           <h3>OPTIMISING WORKLOAD ALLOCATION FOR TROUBLESHOOTING TASKS</h3>
           <p class="tagline">ATM · Complexity-Based Allocation</p>
           <p class="impact-line">
@@ -1143,8 +1388,11 @@
         </article>
 
         <!-- 14. Standardising Quality Assurance Across Multi-Site Troubleshooting -->
-        <article class="project-card secondary-project cat-quality">
-          <p class="project-category-label">QUALITY ASSURANCE &amp; CALIBRATION</p>
+        <article class="project-card secondary-project cat-quality reveal">
+          <p class="project-category-label">
+            <span class="cat-icon">📏</span>
+            QUALITY ASSURANCE &amp; CALIBRATION
+          </p>
           <h3>STANDARDISING QUALITY ASSURANCE ACROSS MULTI-SITE TROUBLESHOOTING</h3>
           <p class="tagline">Global · Multi-Site QA</p>
           <p class="impact-line">
@@ -1164,8 +1412,11 @@
         </article>
 
         <!-- 15. Partner Support Carousels Workflow Integration -->
-        <article class="project-card secondary-project cat-partner">
-          <p class="project-category-label">WORKFLOW INTEGRATION &amp; TRAINING</p>
+        <article class="project-card secondary-project cat-partner reveal">
+          <p class="project-category-label">
+            <span class="cat-icon">🧩</span>
+            WORKFLOW INTEGRATION &amp; TRAINING
+          </p>
           <h3>PARTNER SUPPORT CAROUSELS WORKFLOW INTEGRATION</h3>
           <p class="tagline">Partner Support · Merchandising Carousels</p>
           <p class="impact-line">
@@ -1189,7 +1440,7 @@
     <div class="section-divider"></div>
 
     <!-- SKILLS & TOOLS -->
-    <section id="skills" class="skills-section">
+    <section id="skills" class="skills-section reveal">
       <p class="section-heading">SKILLS &amp; TOOLS</p>
 
       <aside class="module skills-module">
@@ -1247,7 +1498,7 @@
     <div class="section-divider"></div>
 
     <!-- CONTACT -->
-    <section id="contact" class="contact-section">
+    <section id="contact" class="contact-section reveal">
       <aside class="module contact-module">
         <p class="contact-title">LET’S WORK TOGETHER</p>
         <p class="contact-text">
@@ -1268,5 +1519,39 @@
       </aside>
     </section>
   </main>
+
+  <footer class="footer">
+    © 2025 — Designed &amp; built by Jean Paul Angulo
+  </footer>
+
+  <script>
+    // Scroll reveal for elements with .reveal
+    const revealEls = document.querySelectorAll('.reveal');
+    const headingEls = document.querySelectorAll('.section-heading');
+
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('reveal-visible');
+          if (entry.target.classList.contains('about-section') ||
+              entry.target.id === 'more-projects' ||
+              entry.target.id === 'skills' ||
+              entry.target.id === 'contact') {
+            const heading = entry.target.querySelector('.section-heading');
+            if (heading) heading.classList.add('heading-visible');
+          }
+          if (entry.target.classList.contains('projects-module')) {
+            const heading = entry.target.querySelector('.section-heading');
+            if (heading) heading.classList.add('heading-visible');
+          }
+          observer.unobserve(entry.target);
+        }
+      });
+    }, {
+      threshold: 0.15
+    });
+
+    revealEls.forEach(el => observer.observe(el));
+  </script>
 </body>
 </html>
