@@ -246,7 +246,20 @@ body {
     transition: none !important;
   }
 }
+/* Que los enlaces de la nav marquen la sección activa */
+.top-nav a.active {
+  color: var(--accent);
+  border-color: var(--accent);
+}
 
+/* Evitar que el título quede oculto detrás de la nav fija al hacer click en los anchors */
+.about-section,
+.projects-section,
+#more-projects,
+.skills-section,
+.contact-section {
+  scroll-margin-top: 80px; /* ligeramente más que los 56px de la nav */
+}
     
     @media (max-width: 600px) {
       .top-nav {
@@ -1027,11 +1040,11 @@ body {
 
 <body>
   <nav class="top-nav">
-    <a href="#about">About</a>
-    <a href="#key-projects">Key Projects</a>
-    <a href="#more-projects">More</a>
-    <a href="#skills">Skills</a>
-    <a href="#contact">Contact</a>
+    <a href="#about">ABOUT ME</a>
+    <a href="#key-projects">KEY PROJECTS (TOP 3)</a>
+    <a href="#more-projects">MORE PROJECTS</a>
+    <a href="#skills">SKILLS &amp; TOOLS</a>
+    <a href="#contact">LET’S WORK TOGETHER</a>
   </nav>
 
   <header class="header-hero">
@@ -1577,50 +1590,52 @@ body {
   </footer>
 
 <script>
-  // Scroll reveal + stagger suave
+  // Scroll reveal para elementos con .reveal
   const revealEls = document.querySelectorAll('.reveal');
 
-  const observer = new IntersectionObserver((entries) => {
-    entries.forEach((entry) => {
+  const revealObserver = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
       if (entry.isIntersecting) {
-        // Añadimos la clase visible
         entry.target.classList.add('reveal-visible');
 
-        // Si dentro hay un heading de sección, activamos el subrayado animado
+        // Animación del subrayado en headings de sección
         const heading = entry.target.querySelector('.section-heading');
         if (heading) heading.classList.add('heading-visible');
 
-        // No necesitamos observar más ese elemento
-        observer.unobserve(entry.target);
+        revealObserver.unobserve(entry.target);
       }
     });
   }, {
-    threshold: 0.2
+    threshold: 0.15
   });
 
-  // Pequeño stagger basado en el índice de cada .reveal
-  revealEls.forEach((el, index) => {
-    const baseDelay = 80; // ms
-    el.style.transitionDelay = `${index * baseDelay}ms`;
-    observer.observe(el);
+  revealEls.forEach(el => revealObserver.observe(el));
+
+  // --- NAVIGATION BAR: sección activa según el scroll (scrollspy) ---
+
+  const navLinks = document.querySelectorAll('.top-nav a');
+  const sections = document.querySelectorAll('main section[id]');
+
+  const sectionObserver = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        const id = entry.target.id;
+        navLinks.forEach(link => {
+          if (link.getAttribute('href') === `#${id}`) {
+            link.classList.add('active');
+          } else {
+            link.classList.remove('active');
+          }
+        });
+      }
+    });
+  }, {
+    threshold: 0.4,
+    // Root margin para que el "active" cambie de forma natural mientras lees
+    rootMargin: '-20% 0px -50% 0px'
   });
 
-  // Scroll indicator: se desvanece cuando el usuario empieza a bajar
-  const scrollIndicator = document.querySelector('.scroll-indicator');
-
-  const handleScrollIndicator = () => {
-    if (!scrollIndicator) return;
-    const hideOffset = 120; // px de scroll antes de ocultarlo
-    if (window.scrollY > hideOffset) {
-      scrollIndicator.classList.add('scroll-indicator--hidden');
-    } else {
-      scrollIndicator.classList.remove('scroll-indicator--hidden');
-    }
-  };
-
-  window.addEventListener('scroll', handleScrollIndicator);
-  // Llamada inicial por si el usuario entra ya scrolleado
-  handleScrollIndicator();
+  sections.forEach(section => sectionObserver.observe(section));
 </script>
 </body>
 </html>
