@@ -1,86 +1,59 @@
 # Jean Paul Angulo  
-**Project Manager · Operational Excellence · Streaming Operations**
+### Project Manager · Operational Excellence · Streaming Operations
 
-Madrid, Spain · Bilingual ES/EN  
-Email: **jeanpaulangulo@gmail.com** · [LinkedIn](https://www.linkedin.com/in/jeanpaulangulo/)
+Experienced Project & Operations Lead with 10+ years across global streaming and digital media.  
+I specialise in **scalable workflows**, **troubleshooting systems**, and **cross-regional governance**, ensuring consistent delivery and operational clarity for high-volume content pipelines.
 
----
-
-## About Me
-
-Project Manager and Operations Lead with 10+ years of experience in streaming, digital media workflows, and global operations. I specialize in optimizing processes, scaling cross-regional collaboration, and delivering measurable improvements in complex environments (Amazon Prime Video, Disney+, Paramount+, DAZN).
-
-My focus areas include: **Process Optimization · Troubleshooting Workflows · SOP Development · Operational Analytics · AI-Assisted Documentation**.
+I have driven impact for:  
+**Amazon Prime Video · Disney+ · Paramount+ · DAZN · Fox Networks · Antena 3**
 
 ---
 
-## Selected Projects
-
-### 1. Global Troubleshooting Workflow Standardization — Amazon Prime Video
-
-Reduced duplicated efforts by **30%** and improved resolution time by **15%** by aligning SMEs across JP, IN, CR, and EU and defining shared best-practice guidelines for complex case handling.
-
----
-
-### 2. Redelivery → Partner Support Workflow Integration — Amazon Prime Video
-
-Integrated two fragmented workflows, enabling the team to absorb **20%+ more case volume** with no SLA impact while improving ownership, traceability, and partner experience.
+## 🚀 What I Bring
+- Scalable troubleshooting frameworks for multi-site teams  
+- Workflow & process architecture that reduces operational friction  
+- Cross-regional alignment programs (EU · US · LATAM · APAC)  
+- Metadata & content operations optimisation  
+- QA systems, calibration frameworks & training enablement  
+- High-quality documentation (SOPs, playbooks, governance)  
 
 ---
 
-### 3. Global Handover Model & 24/7 Operational Coverage — Amazon Prime Video
+## 🌟 High-Impact Projects
 
-Designed a follow-the-sun handover process across four regions, **tripling effective operational coverage** without adding headcount and reducing idle time between shifts.
+### **Global Troubleshooting Framework**
+Unified 3 workflows across 4 regions, delivering 8 structural improvements and establishing a single operational model for Ticketing, Redelivery and Partner Support.
 
----
+### **Global SME Governance Program**
+Built a recurring alignment cadence that reduced duplicated work by **30%**, accelerated complex-case handling and enabled global adoption of Madrid-led solutions.
 
-### 4. Kamino 2.0 SOP Migration & Training Rollout — Amazon Prime Video
+### **Metadata Accuracy & Backlog Reduction Pilot**
+Designed and led a multi-site model achieving **95% validation accuracy** and projecting an **80% reduction** in inactive metadata tickets.
 
-Delivered a full SOP redesign, global training sessions, and AI-supported documentation improvements—reducing errors, improving consistency, and decreasing onboarding time for new team members.
-
----
-
-### 5. QA Calibration Re-Alignment Across Regions — Amazon Prime Video
-
-Redefined QA criteria, led new calibration cycles, and introduced clearer reference materials, significantly increasing audit consistency and cross-regional trust in quality metrics.
+🔗 **Full project portfolio:**  
+https://jeanpaulangulo.github.io/portfolio/
 
 ---
 
-### 6. Tokyo Global Offsite: Cross-Regional Leadership Alignment — Amazon Prime Video
-
-Designed and facilitated a multi-day offsite that resulted in a new communications and escalation model adopted by global troubleshooting teams, improving operational clarity and collaboration.
-
----
-
-## Skills & Tools
-
-**Core skills:**  
-Project Management · Operational Excellence · Continuous Improvement · Stakeholder Alignment · Troubleshooting · Workflow Design · SOP Development · Data-Informed Decisions
-
-**Tools:**  
-Excel (Advanced) · Airtable · Jira · Salesforce · Asana · Slack Workflow Builder · SharePoint
+## 🧩 Core Skills
+`Project Management` · `Operational Excellence` · `Workflow Architecture`  
+`Root-Cause Analysis` · `QA & Calibration` · `SOP Governance`  
+`Stakeholder Enablement` · `Training & Documentation`  
 
 ---
 
-## Documents
-
-- **CV – Project Manager** (PDF)  
-- **CV – Streaming / Digital Operations** (PDF)  
-- **CV – Process Optimization** (PDF)  
-- **Project Portfolio – One Pager** (PDF)
-
-You can download them here:
-
-- [CV – Project Manager](docs/CV_JeanPaul_Angulo_ProjectManager.pdf)  
-- [CV – Streaming / Digital Operations](docs/CV_JeanPaul_Angulo_StreamingOps.pdf)  
-- [CV – Process Optimization](docs/CV_JeanPaul_Angulo_ProcessOptimization.pdf)  
-- [Project Portfolio – One Pager](docs/Portfolio_Projects_JeanPaul_Angulo.pdf)
+## 🛠 Tools & Platforms
+`Excel (Advanced)` · `Airtable` · `Jira` · `Salesforce` · `Asana`  
+`SharePoint 365` · `Slack Workflows` · `AI-Assisted Documentation`  
 
 ---
 
-## Contact
+## 📫 Get in Touch
+If you're hiring for roles in **Project Management**, **Operational Excellence**, or **Digital/Streaming Operations**, I'd be happy to connect.
 
-For collaborations or opportunities:
+📩 **Email:** jeanpaulangulo@gmail.com  
+💼 **LinkedIn:** https://www.linkedin.com/in/jeanpaulangulo/  
 
-- 📧 **jeanpaulangulo@gmail.com**  
-- 💼 [LinkedIn](<your-linkedin-url>)
+---
+
+### © 2025 — Portfolio & professional profile by **Jean Paul Angulo**
